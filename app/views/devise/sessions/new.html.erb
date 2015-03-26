@@ -1,26 +1,30 @@
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
+<ul>
+  <li>
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
-  </div>
+  </li>
 
-  <div class="field">
+  <li>
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+  </li>
 
   <% if devise_mapping.rememberable? -%>
-    <div class="field">
+    <li>
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
-    </div>
+    </li>
   <% end -%>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
+  <li>
+  <br>
+    <%= f.submit "Log in", :class => 'btn new bigger left' %>
+  </li>
+
+</ul>
 <% end %>
 
-<%= render "users/shared/links" %>
+<%= render "devise/shared/links" %>
