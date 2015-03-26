@@ -1,0 +1,69 @@
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+<ul>
+  <li>
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </li>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <li>
+    <%= f.label :name, 'First and lastname' %>
+    <%= f.text_field :name %>
+  </li>
+
+  <li>
+    <%= f.label :student_number %>
+    <%= f.text_field :student_number %>  
+  </li>
+
+  <li>
+    <%= f.label :mobile, 'Mobile number' %>
+    <%= f.text_field :mobile %>
+  </li>
+
+</ul>
+
+<h2>Change your password</h2>
+
+<ul>  
+  <li>
+    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </li>
+
+  <li>
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </li>
+</ul>
+
+<h2>Confirm with your password</h2>
+
+<ul>
+  <li>
+    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "off" %>
+  </li>
+
+  <li>
+    <%= f.submit "Update", :class => 'btn edit left' %>
+  </li>
+</ul>
+
+<% end %>
+
+<div class="clearfix"></div>
+<br>
+
+<h2>Cancel my account</h2>
+
+<p>Unhappy?</p> <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => 'btn link left' %>
+
+<%# link_to "Back", :back %>
