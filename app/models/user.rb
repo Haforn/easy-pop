@@ -7,5 +7,9 @@ class User < ActiveRecord::Base
   ## Relations ##
   has_many :competencies
 
+  ## Image uploader ##
+  mount_uploader :avatar, ImageUploader
+
+
 end
 
