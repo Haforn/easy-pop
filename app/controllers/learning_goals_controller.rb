@@ -15,7 +15,7 @@ class LearningGoalsController < ApplicationController
 	end
 
 	def update
-		if @learning_goal.update_attributes(edit_learning_goal_params)
+		if @learning_goal.update_attributes(learning_goal_params)
 			redirect_to @learning_goal.competency, notice: "Learning goal is updated"
 		else
 			render 'edit', alert: "Oops, something went wrong!"
@@ -40,10 +40,6 @@ class LearningGoalsController < ApplicationController
 		## Params ##
 		def learning_goal_params
 			params.require(:learning_goal).permit(:title, :achieved, :competency_id)
-		end
-
-		def edit_learning_goal_params
-			params.require(:learning_goal).permit(:title, :achieved)
 		end
 
 end
