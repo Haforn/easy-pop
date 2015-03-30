@@ -16,6 +16,7 @@ function showOurHideLearnMoments() {
 		
 		$(learnMoment).toggleClass('show');
 		$(this).toggleClass('active');
+		
 		if ($(this).hasClass('active')) {
 			$(this).text('Hide learn moments')
 		} else {

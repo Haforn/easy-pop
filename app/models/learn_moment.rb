@@ -6,4 +6,7 @@ class LearnMoment < ActiveRecord::Base
 	### Validations ###
 	validates :title, presence: true
 
+	## Image uploader ##
+  mount_uploader :image, ImageUploader
+
 end

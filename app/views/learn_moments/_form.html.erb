@@ -1,4 +1,4 @@
-<%= form_for @learn_moment do |f| %>
+<%= form_for @learn_moment, html: { :multipart => true } do |f| %>
 		<%= error_messages_for @learn_moment %>
 
 		<li>
@@ -16,6 +16,10 @@
 			<%= f.text_area :what_was_done  %>
 		</li>
 			
+		<li>
+	    <%= f.label :image %>
+	    <%= f.file_field :image %>
+	  </li>
 
 		<li>
 			<%= f.label :reference %>

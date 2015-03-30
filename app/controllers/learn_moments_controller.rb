@@ -43,7 +43,7 @@ class LearnMomentsController < ApplicationController
 
 		## Params ##
 		def learn_moment_params
-			params.require(:learn_moment).permit(:title, :what_was_learned, :what_was_done, :refernce, :hours, :competency_id)
+			params.require(:learn_moment).permit(:title, :what_was_learned, :what_was_done, :image, :refernce, :hours, :competency_id)
 		end
 
 		## Set learn_moment and competency ##
