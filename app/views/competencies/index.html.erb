@@ -12,7 +12,26 @@
 		<% end %>
 
 		<li class="<%= @set_class_added %> clearfix">
-			<%= link_to competency.title, competency_path(competency.id) %>
+			<%= link_to competency.title, competency_path(competency.id), :class => 'basic-link left arrow-forward link' %>
+			
+			<% if competency.learn_moments.any? %>
+				
+				<ul class="learn-moments show">
+					
+					<% cycle('odd') %>
+
+					<% competency.learn_moments.each do |learn_moment| %>
+						<li class="<%= cycle('odd', 'even') %>">
+							<%= link_to learn_moment.title, learn_moment_path(learn_moment.id), :class => 'basic-link' %>
+						</li>
+					<% end %>
+				
+				</ul>
+			
+			<% end %>
+
+			<%= link_to 'Add learn moment', new_learn_moment_path(:competency_id => competency.id), :class => 'btn new' %>
+
 		</li>
 
 	<% end %>
