@@ -2,4 +2,27 @@
 
 <h2><%= @competency.title %></h2>
 
+<% if @competency.learning_goals.any? %>
+	<div class="learning-goals">
+		<h4>Learning goals</h4>
+		<ul>
+			<% @competency.learning_goals.each do |learning_goal| %>
+				<% if learning_goal.achieved %>
+					<% achieved = "achieved" %>
+				<% else %>
+					<% achieved = "not-achieved" %>
+				<% end %>
+				<li class="<%= cycle('odd', 'even') %> <%= achieved %>">
+					<%= link_to "Edit", edit_learning_goal_path(learning_goal.id), :class => 'btn small edit' %>
+					<p>
+					 	<%= learning_goal.title %>
+					</p>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
 
+<h4>Add learning goal</h4>
+
+<%= render 'learning_goals/form' %>

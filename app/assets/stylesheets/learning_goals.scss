@@ -34,8 +34,8 @@
 	}
 }
 
-.goal-not-made,
-.goal-made {
+.not-achieved,
+.achieved {
 	position: relative;
 	&:before {
 		height: 15px;
@@ -48,7 +48,7 @@
 	}
 }
 
-.goal-not-made {
+.not-achieved {
 	&:before {
 		background: url('cross.svg');
 	}

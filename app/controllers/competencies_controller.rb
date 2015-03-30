@@ -8,6 +8,7 @@ class CompetenciesController < ApplicationController
 	end
 
 	def show
+		@learning_goal = LearningGoal.new
 	end 
 
 	def new
