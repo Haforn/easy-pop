@@ -14,23 +14,78 @@
 		<li class="<%= @set_class_added %> clearfix">
 			<%= link_to competency.title, competency_path(competency.id), :class => 'basic-link left arrow-forward link' %>
 			
+			<i class="ec">
+				<%= competency.points %> ec 
+				<%= competency.expertise %>
+			</i>
+
+			<% @total_hours_spend = 0 %>
+			
 			<% if competency.learn_moments.any? %>
 				
-				<ul class="learn-moments show">
+				<ul class="learn-moments">
 					
 					<% cycle('odd') %>
-
+					
 					<% competency.learn_moments.each do |learn_moment| %>
 						<li class="<%= cycle('odd', 'even') %>">
+						
 							<%= link_to learn_moment.title, learn_moment_path(learn_moment.id), :class => 'basic-link' %>
+
+							<span class="hours">
+									<%= @hours_list[learn_moment.hours - 1] %> hours
+								</span>
+
+							<% @total_hours_spend = @total_hours_spend + learn_moment.hours %>
+						
 						</li>
 					<% end %>
 				
 				</ul>
-			
+
 			<% end %>
+			
+			<div class="time-stroke">
+				<div class="hours-spend">
+					<% if @total_hours_spend > 0 %>
+						<!-- total hours spend, in decimals -->
+						<%= total_hours_spend_decimal = @total_hours_spend.round(2) /2 %>
+					<% else %>
+						<%= total_hours_spend_decimal = 0 %>
+					<% end %>
+				</div>
+
+				<div class="hours-to-compleet">
+					<!-- total hours to compleet -->
+					<%= total_hours_to_compleet = competency.points * 10 %> 
+				</div>
+
+				<!-- getting back the procentage -->
+				<% procentage = total_hours_spend_decimal / total_hours_to_compleet * 100 %>
+				
+				<div class="procentage" style="left: <%= procentage.round(2) %>%;">
+						<%= procentage.round() %>%
+				</div>
+
+				<% if procentage < 25 %>
+					<% stroke_color = "red" %> 
+				<% elsif procentage < 50 %>
+					<% stroke_color = "orange" %> 
+				<% elsif procentage < 75 %>
+					<% stroke_color = "blue" %> 
+				<% else %>
+					<% stroke_color = "green" %> 
+				<% end %> 
+
+				<!-- gives back the proces line --> 
+				<div class="stroke <%= stroke_color %>" style="width: <%= procentage.round(2) %>%;"> </div>
+			</div>
 
 			<%= link_to 'Add learn moment', new_learn_moment_path(:competency_id => competency.id), :class => 'btn new' %>
+
+			<% if competency.learn_moments.any? %>
+				<a class="btn link left js-show" href="">Show learn moments</a> 
+			<% end %>
 
 		</li>
 

@@ -1,6 +1,14 @@
 <%= link_to 'Edit Competency', edit_competency_path, :class => 'btn edit in-top' %>
 
-<h2><%= @competency.title %></h2>
+<h2>
+	<%= @competency.title %>
+	<i class="ec">
+		<%= @competency.points %> ec 
+		<%= @competency.expertise %>
+	</i>
+</h2>
+
+
 
 <% if @competency.learning_goals.any? %>
 	<div class="learning-goals">
