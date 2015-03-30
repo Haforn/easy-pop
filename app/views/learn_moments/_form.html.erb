@@ -28,7 +28,7 @@
 		</li>
 
 		<% if @competency %>
-		<%= f.hidden_field :competency_id, :value => @competency.id %>
+			<%= f.hidden_field :competency_id, :value => @competency.id %>
 		<% end %>
 		<li>
 			<%= f.submit nil, :class => "btn new left" %>

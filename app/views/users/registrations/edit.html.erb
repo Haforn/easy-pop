@@ -1,6 +1,6 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, :multipart => true }) do |f| %>
   <%= devise_error_messages! %>
 
 <ul>
@@ -16,6 +16,11 @@
   <li>
     <%= f.label :name, 'First and lastname' %>
     <%= f.text_field :name %>
+  </li>
+
+  <li>
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %>
   </li>
 
   <li>
