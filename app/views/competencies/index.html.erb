@@ -1,3 +1,5 @@
+<%= link_to 'Add a competency', new_competency_path, :class => 'btn new in-top' %>
+
 <h2>Competencies overview</h2>
 
 <ul class="competency">
@@ -10,7 +12,7 @@
 		<% end %>
 
 		<li class="<%= @set_class_added %> clearfix">
-			<%= @competency_list[competency.title - 1] %>
+			<%= link_to competency.title, competency_path(competency.id) %>
 		</li>
 
 	<% end %>

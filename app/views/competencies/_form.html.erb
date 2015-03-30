@@ -1,0 +1,29 @@
+<ul>
+	<%= form_for @competency do |f| %>
+		<li>
+			<%= f.label(:title, "Competency") %>
+			<%= f.select(:title, @competency_list)  %>
+		</li>
+
+		<li>
+			<%= f.label(:points, "Total ec's") %>
+			<%= f.select(:points, @points_list) %>
+		</li>
+
+		<li>
+			<%= f.label(:expertise) %>
+			<%= f.select(:expertise, @expertise_list) %>  
+		</li>
+
+		<li>
+			<%= f.check_box(:added) %>
+			<%= f.label(:added, "Add to POP") %>
+		</li>
+		
+		<br>
+		
+		<li>
+			<%= f.submit nil, :class => 'btn new left' %>
+		</li>
+	<% end %> 
+</ul>
