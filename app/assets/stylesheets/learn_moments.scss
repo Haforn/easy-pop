@@ -8,21 +8,21 @@
 ------------------------------------------------------*/
 
 .learnmoment-detail {
+	background: whitesmoke;
+	padding: 1px $spacing/2;
+	margin-bottom: $spacing/2;
 	.detail-label {
 		width: 100%;
 		font-style: italic;
 		display: block;
 		color: #555;
-		border-bottom: 1px solid whitesmoke;
+		//border-bottom: 1px solid whitesmoke;
 		padding: $spacing/4 0;
 		margin: $spacing/8 0;
 	}
-	p {
-		//margin-bottom: $spacing;
-	}
 	.title {
 		font-size: 14px !important;
-		margin-top: $spacing;
+		//margin-top: $spacing;
 	}
 	.hours {
 		font-size: 14px !important;

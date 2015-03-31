@@ -2,18 +2,18 @@
 		<%= error_messages_for @learn_moment %>
 
 		<li>
-			<%= f.label :title, "Learn Moment" %>
-			<%= f.text_field :title  %>
+			<%= f.label :title, "Learn moment" %>
+			<%= f.text_field :title, placeholder: 'Learn moment' %>
 		</li>
 
 		<li>
 			<%= f.label :what_was_learned %>
-			<%= f.text_area :what_was_learned  %>
+			<%= f.text_area :what_was_learned, placeholder: 'What did you learned?'  %>
 		</li>
 
 		<li>
 			<%= f.label :what_was_done %>
-			<%= f.text_area :what_was_done  %>
+			<%= f.text_area :what_was_done, placeholder: 'What did you do during this learn moment?' %>
 		</li>
 			
 		<li>
@@ -23,10 +23,10 @@
 
 		<li>
 			<%= f.label :reference %>
-			<%= f.text_field :reference  %>
+			<%= f.text_field :reference, placeholder: 'Reference back to a document' %>
 		</li>
 
-		<li>
+		<li class="form-select">
 			<%= f.label :hours, "Hours spend" %>
 			<%= f.select(:hours, @hour_list) %>
 		</li>
@@ -35,7 +35,7 @@
 			<%= f.hidden_field :competency_id, :value => @competency.id %>
 		<% end %>
 		<li>
-			<%= f.submit nil, :class => "btn new left" %>
+			<%= f.submit nil, :class => "btn new left bigger" %>
 		</li>
 	<% end %>
 
