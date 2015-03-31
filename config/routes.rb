@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :competencies
   resources :learning_goals
  	resources :learn_moments
+ 	resources :logs
 
 end

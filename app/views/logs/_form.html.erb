@@ -1,0 +1,30 @@
+<ul>
+	<%= form_for @log do |f| %>
+		<li>
+			<%= f.label :title %>
+			<%= f.text_field :title %>
+		</li>
+
+		<li>
+			<%= f.label(:competency) %>
+			<%= f.select(:competency, @competency_list) %>  
+		</li>
+		
+		<li>
+			<%= f.label :hours, "Hours spend" %>
+			<%= f.select(:hours, @hours_list) %>
+		</li>
+
+		<li class="js-log-date">
+			<%= f.label :created_at %>
+			<%= f.text_field :created_at, :id => 'js-log-date', placeholder: Time.now.strftime('%d/%m/%Y') %>
+		</li>
+
+		<br>
+		
+		<li>
+			<%= f.submit nil, :class => 'btn new left' %>
+		</li>
+
+	<% end %>
+</ul>

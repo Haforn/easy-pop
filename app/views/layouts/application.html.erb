@@ -18,7 +18,7 @@
 	<% end %>
 
 	<% if user_signed_in? %>
-	  <%= link_to 'Profile', edit_user_registration_path, :class => 'btn edit left' %>
+	  <%= link_to 'Profile', root_path, :class => 'btn link left' %>
 	  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn link'  %>
 	<% else %>
 		<% if devise_mapping.registerable? && controller_name != 'registrations' %>

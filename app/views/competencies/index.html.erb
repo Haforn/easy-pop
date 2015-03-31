@@ -33,8 +33,8 @@
 							<%= link_to learn_moment.title, learn_moment_path(learn_moment.id), :class => 'basic-link' %>
 
 							<span class="hours">
-									<%= @hours_list[learn_moment.hours - 1] %> hours
-								</span>
+								<%= @hours_list[learn_moment.hours - 1] %> hours
+							</span>
 
 							<% @total_hours_spend = @total_hours_spend + learn_moment.hours %>
 						
