@@ -18,7 +18,7 @@ input[type="text"],
 input[type="email"],
 textarea,
 select {
-	font-size: 14px;
+	font-size: 12px;
 	width: 100%;
 	background-color: #fff;
 	background-image: none;
@@ -42,7 +42,7 @@ select {
 }
 
 textarea {
-	min-height: 150px;
+	min-height: 60px;
 	padding: $spacing/2 0 $spacing/2 $spacing/2;
 	max-width: 100%;
 }
@@ -60,17 +60,26 @@ input[type="file"] {
 		content: 'Afbeelding uploaden';
 		position: absolute;
 		background: $blue;
-		left: 0;
-		padding: $spacing/2 + 2;
+		left: 5px;
+		padding: $spacing/4 $spacing/2;
 		color: #fff;
 		border-radius: 4px;
-		top: 0;
+		top: 8px;
 		transition: 0.3s;
 	}
 	&:hover {
 		&:after {
 			background: $dark-blue;
 		}
+	}
+}
+
+.form-select {
+	width: 50%;
+	margin: 0;
+	float: left;
+	select {
+		width: 90%;
 	}
 }
 
@@ -109,22 +118,24 @@ input[type="file"] {
 ------------------------------------------------------*/
 .notice {
 	padding: 12px;
-	border: 1px solid $green;
-	background: $soft-green;
+	//border: 1px solid $green;
+	background: $green;
+	box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
 	text-align: center;
-	color: $green;
-	border-radius: 4px;
+	color: #fff;
+	//border-radius: 4px;
 	font-size: 12px;
 	position: absolute;
-	width: 40%;
-	top: 12px;
+	width: 45%;
+	top: 0;
 	left: 0;
 	right: 0;
 	margin: auto;
+	z-index: 100;
 	&.fail {
-		background: $soft-red;
-		border: 1px solid $red;
-		color: $red;
+		background: $red;
+		//border: 1px solid $red;
+		color: #fff;
 	}
 }
 
@@ -134,8 +145,9 @@ input[type="file"] {
 
 .btn {
 	color: #fff;
-	padding: $spacing/2 $spacing;
+	//padding: $spacing/2 $spacing;
 	//margin: 0 $spacing/4;
+	padding: $spacing/4 $spacing/2;
 	text-decoration: none;
 	border-radius: 4px;
 	float: right;
@@ -176,24 +188,20 @@ input[type="file"] {
 		padding: $spacing/4 $spacing/2;
 	}
 	&.in-top {
-		margin-top: -70px;
+		margin-top: -4px;
 	}
 }
 
 .link {
-	color: #000;
+	color: #fff;
 	//color: $blue;
 	text-decoration: none;
-	border: 1px solid #ccc;
-	//border: 1px solid $blue;
-	background: #fff;
+	border: none;
+	background: #314049;
 	&.active,
 	&:hover {
-		background: #e6e6e6;
-		border-color: #adadad;
+		border: none;
 		text-decoration: none;
-		//color: $dark-blue;
-		//border-color: $dark-blue; 
 	}
 	&.arrow-back {
 		position: relative;
@@ -233,7 +241,7 @@ input[type="file"] {
 		border-radius: 4px;
 		&:after {
 			top: -1px;
-			font-size: 20px;
+			font-size: 18px;
 			right: $spacing/6;		
 		}
 	}

@@ -1,6 +1,6 @@
 <%= link_to 'Add a competency', new_competency_path, :class => 'btn new in-top' %>
 
-<h2>Competencies overview</h2>
+<h2>Competencies</h2>
 
 <ul class="competency">
 	<% @competencies.each do |competency| %>
@@ -49,21 +49,21 @@
 				<div class="hours-spend">
 					<% if @total_hours_spend > 0 %>
 						<!-- total hours spend, in decimals -->
-						<%= total_hours_spend_decimal = @total_hours_spend.round(2) /2 %>
+						<% total_hours_spend_decimal = @total_hours_spend.round(2) /2 %>
 					<% else %>
-						<%= total_hours_spend_decimal = 0 %>
+						<% total_hours_spend_decimal = 0 %>
 					<% end %>
 				</div>
 
 				<div class="hours-to-compleet">
 					<!-- total hours to compleet -->
-					<%= total_hours_to_compleet = competency.points * 10 %> 
+					<% total_hours_to_compleet = competency.points * 10 %> 
 				</div>
 
 				<!-- getting back the procentage -->
 				<% procentage = total_hours_spend_decimal / total_hours_to_compleet * 100 %>
 				
-				<div class="procentage" style="left: <%= procentage.round(2) %>%;">
+				<div class="procentage" style="left: <%= procentage.round(2) if procentage < 100 %>%;">
 						<%= procentage.round() %>%
 				</div>
 

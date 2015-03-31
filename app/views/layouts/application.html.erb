@@ -18,7 +18,6 @@
 	<% end %>
 
 	<% if user_signed_in? %>
-	  <%= link_to 'Profile', root_path, :class => 'btn link left' %>
 	  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn link'  %>
 	<% else %>
 		<% if devise_mapping.registerable? && controller_name != 'registrations' %>
@@ -29,13 +28,15 @@
 	  <% end %>
 	<% end %>
 
-	<h1>Lazy pop</h1>
+	<h1><%= link_to 'Lazy pop', root_path %></h1>
 
 </header>
 
 <% if user_signed_in? %>
 		<div class="clearfix top-nav">
-			<%= link_to("Back", :back, :class => "btn link arrow-back left") %>
+				<%= link_to 'Profile', root_path, :class => ('active' if controller.controller_name == 'users') %>
+					<%= link_to 'Logbook', logs_path, :class => ('active' if controller.controller_name == 'logs') %>
+				<%= link_to 'Competencies', competencies_path, :class => ('active' if controller.controller_name == 'competencies')  %>
 		</div>
 <% end %>
 
