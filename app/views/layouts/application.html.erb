@@ -33,7 +33,7 @@
 </header>
 
 <% if user_signed_in? %>
-		<div class="clearfix top-nav">
+		<div class="top-nav">
 				<%= link_to 'Profile', root_path, :class => ('active' if controller.controller_name == 'users') %>
 					<%= link_to 'Logbook', logs_path, :class => ('active' if controller.controller_name == 'logs') %>
 				<%= link_to 'Competencies', competencies_path, :class => ('active' if controller.controller_name == 'competencies')  %>
