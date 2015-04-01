@@ -1,0 +1,12 @@
+<ul>
+	<%= form_for @team do |f| %>
+		<li>
+			<%= f.label :title, "Team name" %>
+			<%= f.text_field :title, placeholder: "Give your team a name!" %>
+		</li>
+
+		<li>
+			<%= f.submit nil, :class => "btn new bigger left" %>
+		</li>
+	<% end %>
+</ul>

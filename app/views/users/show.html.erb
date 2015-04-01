@@ -41,3 +41,9 @@
 <br>
 
 <%= link_to "Edit Profile", edit_user_registration_path, :class => "btn edit left small" %>
+
+<% if current_user.team_id != nil %>
+	<%= link_to "Your Team", team_path(current_user.team_id), :class => "btn link" %>
+<% else %>
+	<%= link_to "Join a team", teams_path, :class => "btn new" %>
+<% end %>

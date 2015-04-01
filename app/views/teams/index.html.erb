@@ -1,0 +1,17 @@
+<h2>Make your team</h2>
+
+<%= render 'form' %>
+
+<div class="clearfix"></div>
+
+<% if @teams.any? %>
+	<h2>All teams</h2>
+
+	<ul>
+		<% @teams.each do |team| %>
+			<li>
+				<%= team.title %>
+			</li>
+		<% end %>
+	</ul>
+<% end %>
