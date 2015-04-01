@@ -30,18 +30,21 @@ header {
 		position: relative;
 		padding: $spacing/2 $spacing;
 	}
-	&:before,
-	&:after {
-		width: 100%;
-		height: 41px;
-		content: '';
-		position: absolute;
-		right: 100%;
-		background: #314049;
+	&.js-width {
+		&:before,
+		&:after {
+			width: 100%;
+			height: 41px;
+			content: '';
+			position: absolute;
+			right: 100%;
+			background: #314049;
+		}
+		&:after {
+			right: -100%;
+		}
 	}
-	&:after {
-		right: -100%;
-	}
+
 }
 
 .wrapper {
@@ -89,18 +92,20 @@ footer {
 			}
 		}
 	}
-	&:before,
-	&:after {
-		width: 100%;
-		height: 40px;
-		content: '';
-		position: absolute;
-		right: 100%;
-		top: 0;
-		background: $green;
-	}
-	&:after {
-		right: -100%;
+	&.js-width {
+		&:before,
+		&:after {
+			width: 100%;
+			height: 40px;
+			content: '';
+			position: absolute;
+			right: 100%;
+			top: 0;
+			background: $green;
+		}
+		&:after {
+			right: -100%;
+		}
 	}
 }
 
