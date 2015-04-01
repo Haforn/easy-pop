@@ -2,15 +2,6 @@
 // All this logic will automatically be available in application.js.
 var ready;
 ready = function() {
-		
-	if($('.learnmoment-detail').find('img').length > 0) {
-		setMaxWidthOnImage()
-	}
-
-	if($('body').find('.js-user-image').length > 0) {
-		scaleImage();
-	}
-
 	// On click show our hide learn moments
 	showOurHideLearnMoments()
 	
@@ -18,8 +9,15 @@ ready = function() {
 		dateFormat: 'dd/mm/yy'
 	});
 	
-};
+	if($('.learnmoment-detail').find('img').length > 0) {
+		setMaxWidthOnImage()
+	}
+	
+	if($('body').find('.js-user-image').length > 0) {
+		scaleImage();
+	}
 
+};
 
 function setMaxWidthOnImage() {
 	var el = $('.learnmoment-detail').find('img')
@@ -37,12 +35,13 @@ function scaleImage() {
 	$('.js-user-image').find('img').each(function () {
 		var widthImg = $(this).width();
 		var heightImg = $(this).height();
- 		if (widthImg < heightImg) {
-			$(this).width('100px');
- 		} else {
- 			$(this).height('100px');
- 		}
-
+		if (widthImg > 100 && heightImg > 100) {
+			if (widthImg < heightImg) {
+				$(this).width('100px');
+	 		} else {
+	 			$(this).height('100px');
+	 		}
+		}
 	}); 
 }
 
@@ -62,6 +61,6 @@ function showOurHideLearnMoments() {
 	});
 }
 
-
 $(document).ready(ready);
 $(document).on('page:load', ready);
+$(window).load(ready)

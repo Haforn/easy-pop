@@ -1,7 +1,3 @@
-// Place all the styles related to the LearnMoments controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 @import 'variables';
 
 /* Learnmoment detail
@@ -16,13 +12,11 @@
 		font-style: italic;
 		display: block;
 		color: #555;
-		//border-bottom: 1px solid whitesmoke;
 		padding: $spacing/4 0;
 		margin: $spacing/8 0;
 	}
 	.title {
 		font-size: 14px !important;
-		//margin-top: $spacing;
 	}
 	.hours {
 		font-size: 14px !important;
@@ -34,5 +28,3 @@
 	  height: 100%;
 	}
 }
-
-/* Learnmoment detail */

@@ -21,11 +21,9 @@ body, ul, li {
 
 header {
 	height: 41px;
-	//padding:;
 	max-width: 1000px;
 	margin: 0 auto;
 	background: #314049;
-	//z-index: -1;
 	position: relative;
 	.btn {
 		z-index: 1;
@@ -59,12 +57,9 @@ footer {
 }
 
 .top-nav {
-	//margin: 0 0 $spacing/2 0;
-	//padding: $spacing/2;
 	height: 40px;
 	margin: 0 auto;
 	max-width: 1000px;
-	//padding-bottom: 0;
 	background: $green;
 	position: relative;
 	a {
@@ -75,7 +70,6 @@ footer {
 		width: 33.3%;
 		text-align: center;
 		color: #fff;
-		//text-transform: uppercase;
 		text-decoration: none;
 		position: relative;
 		&.active {
