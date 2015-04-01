@@ -1,0 +1,17 @@
+<h2><%= @team.title %></h2>
+
+<ul>	
+	<% @team_members.each do |member| %>
+		<li>
+			<%= member.name %>
+		</li>
+	<% end %>
+</ul>
+
+<br>
+
+<% if current_user.id == @team.owner_id %>
+	<%= render 'form' %>
+
+	<%= link_to "Delete", @team, method: :delete, :class => 'btn delete' %>
+<% end %>

@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :learning_goals
  	resources :learn_moments
  	resources :logs
+ 	resources :teams
 
 end

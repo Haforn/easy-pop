@@ -4,6 +4,8 @@ body {
 	font-family: $basic-font;
 	font-size: 12px;
 	min-width: 320px;
+	overflow-x: hidden;
+	background: #ECEDED;
 }
 
 /* little fixes */ 
@@ -11,7 +13,6 @@ body, ul, li {
 	margin: 0;
 	padding: 0;
 	list-style: none;
-	background: #ECEDED;
 }
 
 /* END little fixes */
@@ -21,7 +22,8 @@ body, ul, li {
 header {
 	height: 41px;
 	//padding:;
-	max-width: 1200px;
+	max-width: 1000px;
+	margin: 0 auto;
 	background: #314049;
 	//z-index: -1;
 	position: relative;
@@ -30,11 +32,25 @@ header {
 		position: relative;
 		padding: $spacing/2 $spacing;
 	}
+	&:before,
+	&:after {
+		width: 100%;
+		height: 41px;
+		content: '';
+		position: absolute;
+		right: 100%;
+		background: #314049;
+	}
+	&:after {
+		right: -100%;
+	}
 }
 
 .wrapper {
-	margin: 0 $spacing/2 $spacing;
+	padding: 0 $spacing/2 $spacing;
 	position: relative;
+	margin: 0 auto;
+	max-width: 970px;
 }
 
 
@@ -46,8 +62,11 @@ footer {
 	//margin: 0 0 $spacing/2 0;
 	//padding: $spacing/2;
 	height: 40px;
+	margin: 0 auto;
+	max-width: 1000px;
 	//padding-bottom: 0;
 	background: $green;
+	position: relative;
 	a {
 		display: block;
 		float: left;
@@ -75,6 +94,19 @@ footer {
 				border-bottom: 8px solid #ECEDED;
 			}
 		}
+	}
+	&:before,
+	&:after {
+		width: 100%;
+		height: 40px;
+		content: '';
+		position: absolute;
+		right: 100%;
+		top: 0;
+		background: $green;
+	}
+	&:after {
+		right: -100%;
 	}
 }
 

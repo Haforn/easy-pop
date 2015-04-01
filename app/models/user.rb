@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   ## Relations ##
+  belongs_to :team
   has_many :competencies
   has_many :logs
 

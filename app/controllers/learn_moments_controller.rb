@@ -14,7 +14,7 @@ class LearnMomentsController < ApplicationController
 	def create
 		@learn_moment = LearnMoment.new(learn_moment_params)
 		if @learn_moment.save
-			redirect_to @learn_moment, notice: "Your learn moment is added"
+			redirect_to competencies_path, notice: "Your learn moment is added"
 		else
 			render 'new', alert: "Oops, something went wrong!"
 		end
