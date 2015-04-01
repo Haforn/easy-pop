@@ -143,6 +143,8 @@ input[type="file"] {
 	border: 1px solid;
 	transition: 0.3s;
 	cursor: pointer;
+	-webkit-appearance: none;
+
 	&.edit {
 		background: $blue;
 		border-color: $blue;
