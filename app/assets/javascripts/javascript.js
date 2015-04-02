@@ -16,10 +16,14 @@ ready = function() {
 	if($('body').find('.js-user-image').length > 0) {
 		scaleImage();
 	}
+
 	var documentWidth = $(document).width()
 	if(documentWidth > 1000) {
 		$('header, .top-nav').addClass('js-width')
 	}
+
+	$('.notice, .alert').delay(2000).fadeOut('slow');
+	
 };
 
 function setMaxWidthOnImage() {
@@ -66,4 +70,4 @@ function showOurHideLearnMoments() {
 
 $(document).ready(ready);
 $(document).on('page:load', ready);
-$(window).load(ready)
+//$(window).load(ready)

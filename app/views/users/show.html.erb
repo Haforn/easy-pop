@@ -47,3 +47,8 @@
 <% else %>
 	<%= link_to "Join a team", teams_path, :class => "btn new" %>
 <% end %>
+
+<div class="clearfix"></div>
+<br>
+
+<%= link_to "Generate Pop", generate_pdfs_path(:format => 'pdf'), :class => "btn link", :target => "_blank" %>

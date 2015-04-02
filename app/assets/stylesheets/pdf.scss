@@ -1,20 +1,21 @@
 @import 'variables';
 
-div.page {
- 	page-break-before: always;
+.page {
+ 	page-break-after: always;
+ 	page-break-inside: avoid;
  	font-family: $basic-font;
  	padding-top: $spacing;
  	margin-bottom: $spacing*2;
-
 }
 
 .pdf {
-	font-family: 'Open Sans', sans-serif !important;
+	font-family: $basic-font;
 	h1 {
 		margin-bottom: 0;
 	}
 
 	.profile-picture {
+		max-width: 200px;
 		float: left;
 		margin: $spacing/2 $spacing $spacing 0;
 	}
