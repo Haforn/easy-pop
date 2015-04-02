@@ -10,5 +10,6 @@ Rails.application.routes.draw do
  	resources :learn_moments
  	resources :logs
  	resources :teams
+ 	resources :generate_pdfs, only: [:index]
 
 end

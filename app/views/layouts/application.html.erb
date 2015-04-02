@@ -7,38 +7,44 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<header>
-
-	<% if notice %>
-	  <div class="notice"><%= notice %></div>
+<body 
+	<% if controller.controller_name == 'generate_pdfs' %>
+		class="pdf"
 	<% end %>
-	<% if alert %>
-	  <div class="notice fail"><%= alert %></div>
-	<% end %>
+>
+
+<% if controller.controller_name != 'generate_pdfs' %>
+	<header>
+
+		<% if notice %>
+		  <div class="notice"><%= notice %></div>
+		<% end %>
+		<% if alert %>
+		  <div class="notice fail"><%= alert %></div>
+		<% end %>
+
+		<% if user_signed_in? %>
+		  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn link'  %>
+		<% else %>
+			<% if devise_mapping.registerable? && controller_name != 'registrations' %>
+		  	<%= link_to "Sign up", new_user_registration_path, :class => 'btn link left'  %>
+		  <% end %>
+			<% if controller_name != 'sessions' %> 
+		  	<%= link_to "Login", new_user_session_path, :class => 'btn new'  %>
+		  <% end %>
+		<% end %>
+
+		<h1><%= link_to 'Lazy pop', root_path %></h1>
+
+	</header>
 
 	<% if user_signed_in? %>
-	  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn link'  %>
-	<% else %>
-		<% if devise_mapping.registerable? && controller_name != 'registrations' %>
-	  	<%= link_to "Sign up", new_user_registration_path, :class => 'btn link left'  %>
-	  <% end %>
-		<% if controller_name != 'sessions' %> 
-	  	<%= link_to "Login", new_user_session_path, :class => 'btn new'  %>
-	  <% end %>
+			<div class="top-nav">
+					<%= link_to 'Profile', root_path, :class => ('active' if controller.controller_name == 'users') %>
+						<%= link_to 'Logbook', logs_path, :class => ('active' if controller.controller_name == 'logs') %>
+					<%= link_to 'Competencies', competencies_path, :class => ('active' if controller.controller_name == 'competencies')  %>
+			</div>
 	<% end %>
-
-	<h1><%= link_to 'Lazy pop', root_path %></h1>
-
-</header>
-
-<% if user_signed_in? %>
-		<div class="top-nav">
-				<%= link_to 'Profile', root_path, :class => ('active' if controller.controller_name == 'users') %>
-					<%= link_to 'Logbook', logs_path, :class => ('active' if controller.controller_name == 'logs') %>
-				<%= link_to 'Competencies', competencies_path, :class => ('active' if controller.controller_name == 'competencies')  %>
-		</div>
 <% end %>
 
 <div class="wrapper clearfix">
