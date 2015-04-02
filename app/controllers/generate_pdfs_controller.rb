@@ -1,8 +1,17 @@
 class GeneratePdfsController < ApplicationController 
 	
+	#layout 'generate_pdf'
+
 	before_action :set_arrays
 
 	def index
+		respond_to do |format|
+      format.html
+      current_user
+      format.pdf do
+        render :pdf => "Pop", :template => 'generate_pdfs/index.html.erb', :layout => 'layouts/pdf.html.erb'
+      end
+    end 
 	end
 
 	private
