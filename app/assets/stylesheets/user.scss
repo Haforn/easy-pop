@@ -25,6 +25,9 @@ table {
 	position: absolute;
 	top: 0;
 	right: $spacing/2;
+	img {
+		max-width: 100px;
+	}
 }
 
 .user {

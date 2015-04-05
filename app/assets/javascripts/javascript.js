@@ -14,7 +14,7 @@ ready = function() {
 	}
 	
 	if($('body').find('.js-user-image').length > 0) {
-		scaleImage();
+		//scaleImage();
 	}
 
 	var documentWidth = $(document).width()

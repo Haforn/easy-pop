@@ -83,6 +83,7 @@ GEM
     erubis (2.7.0)
     excon (0.44.4)
     execjs (2.4.0)
+    ffi (1.9.8)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
     fog (1.28.0)
@@ -170,6 +171,8 @@ GEM
       activesupport (>= 4.1.0)
     hike (1.2.3)
     i18n (0.7.0)
+    imagemagick-binaries (6.8.7.5.1)
+      sys-uname (= 0.9.0)
     inflecto (0.0.2)
     ipaddress (0.8.0)
     jbuilder (2.2.12)
@@ -253,6 +256,8 @@ GEM
       colorize (>= 0.7.0)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
+    sys-uname (0.9.0)
+      ffi (>= 1.0.0)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
@@ -286,6 +291,7 @@ DEPENDENCIES
   carrierwave_direct
   coffee-rails (~> 4.1.0)
   devise
+  imagemagick-binaries
   jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-rails
