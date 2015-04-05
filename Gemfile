@@ -27,6 +27,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'carrierwave'
 gem 'carrierwave_direct'
 
+#gem "mini_magick"
+gem "imagemagick-binaries"
+
 # Jquery ui
 gem 'jquery-ui-rails'
 
