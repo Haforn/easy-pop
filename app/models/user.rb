@@ -8,10 +8,10 @@ class User < ActiveRecord::Base
   belongs_to :team
   has_many :competencies
   has_many :logs
+  has_many :team_requests
 
   ## Image uploader ##
   mount_uploader :avatar, ImageUploader
-
 
 end
 
