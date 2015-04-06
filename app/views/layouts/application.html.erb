@@ -22,10 +22,10 @@
 	  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn link'  %>
 	<% else %>
 		<% if devise_mapping.registerable? && controller_name != 'registrations' %>
-	  	<%= link_to "Sign up", new_user_registration_path, :class => 'btn link left'  %>
+	  	<%= link_to "Sign up", new_user_registration_path, :class => 'btn link'  %>
 	  <% end %>
 		<% if controller_name != 'sessions' %> 
-	  	<%= link_to "Login", new_user_session_path, :class => 'btn new'  %>
+	  	<%= link_to "Login", new_user_session_path, :class => 'btn link'  %>
 	  <% end %>
 	<% end %>
 

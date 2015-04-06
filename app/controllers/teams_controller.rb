@@ -7,11 +7,14 @@ class TeamsController < ApplicationController
 
 		@teams = Team.all
 		@team = Team.new
+
 	end
 
 	def show
 		@team = Team.find(current_user.team_id)
 		@team_members = @team.users
+
+		@team_requests = @team.team_requests
 	end
 
 	def create
@@ -49,7 +52,7 @@ class TeamsController < ApplicationController
 				render 'show', alert: "Couldn't delete the team"
 			end
 		else
-			render 'show', alert: "You are not the team owner"
+			render 'index', alert: "Oops, something went wrong!"
 		end
 	end
 

@@ -11,6 +11,11 @@
 		<% @teams.each do |team| %>
 			<li>
 				<%= team.title %>
+				<% if !TeamRequest.where(:user_id => current_user.id, :team_id => team.id).any? %>
+					<%= link_to "Join", join_team_path(:team_id => team.id), :class => 'btn new' %>
+				<% else %>
+					<%= link_to "Undo", undo_team_path(:team_id => team.id), :class => 'btn delete' %>
+				<% end %>
 			</li>
 		<% end %>
 	</ul>

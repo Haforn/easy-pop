@@ -1,9 +1,24 @@
 <h2><%= @team.title %></h2>
 
-<ul>	
+<% if current_user.id == @team.owner_id && @team_requests.any? %>
+	<h3>Join requests</h3>
+	<ul class="learn-moments show competency">
+	<% @team_requests.each do |request| %>
+		<li>
+			<%= request.user.name || request.user.email %>
+			<%= link_to "Add", add_team_member_path(member_id: request.user.id, team_id: @team.id), :class => 'btn new' %>
+			<%= link_to "Remove", remove_request_path(request_id: request.id), :class => "btn delete" %>
+		</li>
+	<% end %>
+	</ul>
+
+	<br>
+<% end %>
+<h3>Team members</h3>
+<ul class="competency">	
 	<% @team_members.each do |member| %>
 		<li>
-			<%= member.name %>
+			<%= member.name || member.email %>
 		</li>
 	<% end %>
 </ul>
@@ -11,7 +26,9 @@
 <br>
 
 <% if current_user.id == @team.owner_id %>
+
 	<%= render 'form' %>
 
 	<%= link_to "Delete", @team, method: :delete, :class => 'btn delete' %>
+
 <% end %>
