@@ -6,10 +6,10 @@ class GeneratePdfsController < ApplicationController
 
 	def index
 		respond_to do |format|
+      #current_user
       format.html
-      current_user
       format.pdf do
-        render :pdf => "Pop", :template => 'generate_pdfs/index.html.erb', :layout => 'layouts/pdf.html.erb'
+        render 	:pdf => "Pop", :template => 'generate_pdfs/index.html.erb', :layout => 'layouts/pdf.html.erb'
       end
     end 
 	end
