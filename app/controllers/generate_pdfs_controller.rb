@@ -22,7 +22,13 @@ class GeneratePdfsController < ApplicationController
 				'Research and Innovation',
 				'Concepting',
 				'Multimedia Design',
-				'Multimedia Production' 
+				'Multimedia Production',
+				'Quality Monitoring and Implementation',
+				'Multidisciplinary Teamwork',
+				'Communication',
+				'Project Management',
+				'Sharing',
+				'Growth and Reflection'
 			]
 
 			@expertise_list = [
