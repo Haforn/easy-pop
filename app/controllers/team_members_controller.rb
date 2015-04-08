@@ -36,4 +36,12 @@ class TeamMembersController < ApplicationController
 		end
 	end
 
+	def leave_team
+		if current_user.update_attributes(:team_id => nil)
+			redirect_to teams_path, notice: "You left the team"
+		else
+			render 'teams#index', alert: "Oops, something went wrong!"
+		end
+	end
+
 end

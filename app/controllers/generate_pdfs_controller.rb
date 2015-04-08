@@ -9,7 +9,7 @@ class GeneratePdfsController < ApplicationController
       #current_user
       format.html
       format.pdf do
-        render 	:pdf => "Pop", :template => 'generate_pdfs/index.html.erb', :layout => '/layouts/pdf.html.erb'
+        render 	:pdf => "Pop", :template => 'generate_pdfs/index.html.erb', :layout => 'layouts/pdf.html.erb'
       end
     end 
 	end

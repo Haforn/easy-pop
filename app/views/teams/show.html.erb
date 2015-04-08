@@ -19,6 +19,11 @@
 	<% @team_members.each do |member| %>
 		<li>
 			<%= member.name || member.email %>
+			<span class="ec">
+				<em>
+					<%= 'Team owner' if member.id == @team.owner_id %>
+				</em>
+			</span>
 		</li>
 	<% end %>
 </ul>
@@ -30,5 +35,6 @@
 	<%= render 'form' %>
 
 	<%= link_to "Delete", @team, method: :delete, :class => 'btn delete' %>
-
+<% else %>
+	<%= link_to "Leave this team", leave_team_path, :class => "btn delete" %>
 <% end %>
