@@ -36,7 +36,7 @@
 	&:before {
 		height: 15px;
 		width: 15px;
-		background: url('check.svg');
+		background: asset_url('check.svg');
 		content: '';
 		left: 6px;
 		top: 20px;
@@ -46,6 +46,6 @@
 
 .not-achieved {
 	&:before {
-		background: url('cross.svg');
+		background: asset_url('cross.svg');
 	}
 }
