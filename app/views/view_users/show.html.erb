@@ -1,0 +1,81 @@
+<h2>Profiel</h2>
+<ul>
+	<% if view_user.name %>
+		<li>
+			<%= view_user.name %>
+		</li>
+	<% end %>
+
+	<li>
+		<%= view_user.email %>
+	</li>
+</ul>
+
+<% if view_user.competencies.any? %>
+	<h2>Competency list</h2>
+	<ul>
+	<% view_user.competencies.each do |competency| %>
+		<% if competency.added %>
+			<li>
+				<h3><%= competency.title %></h3>
+				<% if competency.learning_goals.any? %>
+				<h4>Learning goals</h4>
+				<ul>
+					<% competency.learning_goals.each do |learning_goal| %>
+						<li>
+							<%= learning_goal.title %>
+						</li>
+					<% end %>
+				</ul>
+				<% end %>
+				<% if competency.learn_moments.any? %>
+					<h4>Learn moments</h4>
+					<ul>
+						<% competency.learn_moments.each do |learn_moment| %>
+							<li>
+								<%= learn_moment.title %>
+							</li>
+						<% end %>
+					</ul>
+				<% end %>
+			</li>
+		<% end %>
+	<% end %>
+	</ul>
+<% else %>
+	<p>
+		This user doesn't has any competencies added to his/her lazy pop
+	</p>
+<% end %>
+
+<% if view_user.logs.any? %>
+	<h3>Logbook</h3>
+	<% view_user.logs.group_by(&:week).sort.each do |week, log| %> 
+	  <h4>Week <%= week %></h4>
+	  
+	  <% log.group_by(&:day).sort.each do |day, log| %>
+	    <% cycle('odd') %>
+	    <ul class="competency logbook">
+	      <li>
+	        <timestamp>Dag <%= day %></timestamp>
+	       	<ul class="learn-moments show">      
+	         	<% log.each do |log| %>
+	            <li class="<%= cycle('odd', 'even') %>">
+	         			<%= log.title %>
+	              <span class="hours">
+	                <%= @hours_list[log.hours] %> hours
+	              </span>
+	              
+	         		</li>
+	         	<% end %>
+	       	</ul>
+	      </li>
+	    </ul>
+	  <% end %>
+
+	<% end %>
+<% else %>
+	<p>
+		This user has no logs yet!
+	</p>
+<% end %>

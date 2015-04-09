@@ -15,15 +15,16 @@
 	<br>
 <% end %>
 <h3>Team members</h3>
-<ul class="competency">	
+<ul class="competency learn-moments show">	
 	<% @team_members.each do |member| %>
 		<li>
+			<%= link_to "View user", view_user_path(id: member.id), :class => 'btn edit' if member.id != current_user.id %>
 			<%= member.name || member.email %>
 			<span class="ec">
 				<em>
-					<%= 'Team owner' if member.id == @team.owner_id %>
+					<%= 'Team owner' if member.id == @team.owner_id %>&nbsp;&nbsp;
 				</em>
-			</span>
+			</span
 		</li>
 	<% end %>
 </ul>
