@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :competencies
   has_many :logs
   has_many :team_requests
+  has_many :followers
 
   ## Image uploader ##
   mount_uploader :avatar, ImageUploader

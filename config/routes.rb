@@ -25,4 +25,6 @@ Rails.application.routes.draw do
 
  	get 'view_user/:id', to: 'view_users#show', as: 'view_user' 
 
+ 	#resources
+
 end
