@@ -1,44 +1,48 @@
 <h2>Learn moment details</h2>
 
-<div class="learnmoment-detail">
-	<p><i>Learn moment in competency <%= @learn_moment.competency.title %></i></p>
+<div class='learnmoment-detail'>
+	<p>
+		<i>Learn moment in competency 
+			<%= @learn_moment.competency.title %>
+		</i>
+	</p>
 
-	<p class="title">
+	<p class='title'>
 		<strong><%= @learn_moment.title %></strong>
-			<span class="hours">
+			<span class='hours'>
 				<%= @hour_list_show[@learn_moment.hours - 1] %> hours
 			</span>
 	</p>
 	<% if !@learn_moment.what_was_learned.blank? %> 
 		<p>
-			<span class="detail-label">What was Learned?</span>
+			<span class='detail-label'>What was Learned?</span>
 			<%= @learn_moment.what_was_learned %>
 		</p>
 	<% end %>
 	<% if !@learn_moment.what_was_done.blank? %>
 		<p>
-			<span class="detail-label">What was done?</span>
+			<span class='detail-label'>What was done?</span>
 			<%= @learn_moment.what_was_done %>
 		</p>
 	<% end %>
 	<% if !@learn_moment.reference.blank? %>
 		<p>
-			<span class="detail-label">Reference</span>
+			<span class='detail-label'>Reference</span>
 			<%= @learn_moment.reference %>
 		</p>
 	<% end %>
 
 	<% if !@learn_moment.image.blank? %> 
 	<p>
-		<span class="detail-label">Reference Image</span>
+		<span class='detail-label'>Reference Image</span>
 		<%= image_tag @learn_moment.image %>
 	</p>
 	<% end %>
 	<p>
-		<span class="detail-label">Updated at</span>
-		<%= @learn_moment.updated_at.strftime "%d/%m/%Y %H:%M" %>
+		<span class='detail-label'>Updated at</span>
+		<%= @learn_moment.updated_at.strftime '%d/%m/%Y %H:%M' %>
 	</p>
 
 </div>
 
-<%= link_to "Edit", edit_learn_moment_path, :class => 'btn edit' %>
+<%= link_to 'Edit', edit_learn_moment_path, :class => 'btn edit' %>
