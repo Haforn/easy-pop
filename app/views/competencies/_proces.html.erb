@@ -1,0 +1,36 @@
+<div class="time-stroke">
+	<div class="hours-spend">
+		<% if @total_hours_spend > 0 %>
+			<!-- total hours spend, in decimals -->
+			<% total_hours_spend_decimal = @total_hours_spend.round(2) /2 %>
+		<% else %>
+			<% total_hours_spend_decimal = 0 %>
+		<% end %>
+	</div>
+
+	<div class="hours-to-compleet">
+		<!-- total hours to compleet -->
+		<% total_hours_to_compleet = competency.points * 10 %> 
+	</div>
+
+	<!-- getting back the procentage -->
+	<% procentage = total_hours_spend_decimal / total_hours_to_compleet * 100 %>
+	
+	<div class="procentage" style="left: <%= procentage.round(2) if procentage < 100 %>%;">
+			<%= procentage.round() %>%
+	</div>
+
+	<% if procentage < 25 %>
+		<% stroke_color = "red" %> 
+	<% elsif procentage < 50 %>
+		<% stroke_color = "orange" %> 
+	<% elsif procentage < 75 %>
+		<% stroke_color = "blue" %> 
+	<% else %>
+		<% stroke_color = "green" %> 
+	<% end %> 
+
+	<!-- gives back the proces line --> 
+	<div class="stroke <%= stroke_color %>" style="width: <%= procentage.round(2) %>%;"> 
+	</div>
+</div>

@@ -1,30 +1,30 @@
 <ul>
 	<%= form_for @competency do |f| %>
 		<li>
-			<%= f.label(:title, "Competency") %>
+			<%= f.label(:title, 'Competency') %>
 			<%= f.select(:title, @competency_list)  %>
 		</li>
 
-		<li class="form-select">
-			<%= f.label(:points, "Total ec's") %>
+		<li class='form-select'>
+			<%= f.label(:points, 'Total ec\'s') %>
 			<%= f.select(:points, @points_list) %>
 		</li>
 
-		<li class="form-select">
+		<li class='form-select'>
 			<%= f.label(:expertise) %>
 			<%= f.select(:expertise, @expertise_list) %>  
 		</li>
 
 		<li>
 			<%= f.check_box(:added, checked: true) %>
-			<%= f.label(:added, "Check it!") %>
+			<%= f.label(:added, 'Check it!') %>
 			<i>So it wil added when you generate a pop</i>
 		</li>
 		
 		<br>
 		
 		<li>
-			<%= f.submit nil, :class => 'btn new left bigger' %>
+			<%= f.submit nil, class: 'btn new left bigger' %>
 		</li>
 	<% end %> 
 </ul>
