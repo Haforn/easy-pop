@@ -2,7 +2,7 @@
 	<%= form_for @learning_goal do |f| %>
 	<ul><%= error_messages_for(@learning_goal) %>
 		<li>
-			<%= f.label :title, "Learnig Goal" %>
+			<%= f.label :title, 'Learnig Goal' %>
 			<%= f.text_area :title  %>
 		</li>
 
@@ -10,14 +10,14 @@
 			<%= f.check_box :achieved %>
 			<%= f.label :achieved %>
 		</li>
-		<% if @competency  %>
-			<%= f.hidden_field :competency_id, :value => @competency.id %>
+		<% if @competency %>
+			<%= f.hidden_field :competency_id, value: @competency.id %>
 		<% end %>
 
 		<br>
 
 		<li>
-			<%= f.submit nil, data: { disable_with: 'Aan het versturen...' }, :class => 'btn new left bigger'  %>
+			<%= f.submit nil, data: { disable_with: 'Aan het versturen...' }, class: 'btn new left bigger'  %>
 		</li>
 	</ul>
 <% end %>
