@@ -1,6 +1,4 @@
 class GeneratePdfsController < ApplicationController 
-	
-	#layout 'generate_pdf'
 
 	before_action :set_arrays
 
@@ -32,9 +30,9 @@ class GeneratePdfsController < ApplicationController
 			]
 
 			@expertise_list = [
-				'Basic',
-				'Advanced',
-				'Expert'
+				'basis',
+				'gevorderd',
+				'expert'
 			]
 
 			@points_list = [3,6,9,12,15,18,21,24,27,30]

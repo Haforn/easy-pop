@@ -1,7 +1,7 @@
 <ul>
 	<%= form_for @competency do |f| %>
 		<li>
-			<%= f.label(:title, 'Competency') %>
+			<%= f.label(:title, 'Competencie') %>
 			<%= f.select(:title, @competency_list)  %>
 		</li>
 
@@ -11,14 +11,14 @@
 		</li>
 
 		<li class='form-select'>
-			<%= f.label(:expertise) %>
+			<%= f.label(:expertise, 'Niveau') %>
 			<%= f.select(:expertise, @expertise_list) %>  
 		</li>
 
 		<li>
 			<%= f.check_box(:added, checked: true) %>
 			<%= f.label(:added, 'Check it!') %>
-			<i>So it wil added when you generate a pop</i>
+			<i>Zodat de competencie wordt toegevoegd bij het genereren van je pop</i>
 		</li>
 		
 		<br>

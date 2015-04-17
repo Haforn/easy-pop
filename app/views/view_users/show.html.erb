@@ -12,14 +12,14 @@
 </ul>
 
 <% if view_user.competencies.any? %>
-	<h2>Competency list</h2>
+	<h2>Competencies</h2>
 	<ul>
 	<% view_user.competencies.each do |competency| %>
 		<% if competency.added %>
 			<li>
 				<h3><%= competency.title %></h3>
 				<% if competency.learning_goals.any? %>
-				<h4>Learning goals</h4>
+				<h4>Leerdoelen</h4>
 				<ul>
 					<% competency.learning_goals.each do |learning_goal| %>
 						<li>
@@ -29,7 +29,7 @@
 				</ul>
 				<% end %>
 				<% if competency.learn_moments.any? %>
-					<h4>Learn moments</h4>
+					<h4>Leermomenten</h4>
 					<ul>
 						<% competency.learn_moments.each do |learn_moment| %>
 							<li>
@@ -44,12 +44,12 @@
 	</ul>
 <% else %>
 	<p>
-		This user doesn't has any competencies added to his/her lazy pop
+		<i><%= view_user.name || view_user.email %></i> heeft op dit moment geen competencies toegevoegd aan zijn Lazy pop!
 	</p>
 <% end %>
 
 <% if view_user.logs.any? %>
-	<h3>Logbook</h3>
+	<h3>Logboek</h3>
 	<% view_user.logs.group_by(&:week).sort.each do |week, log| %> 
 	  <h4>Week <%= week %></h4>
 	  
@@ -76,6 +76,6 @@
 	<% end %>
 <% else %>
 	<p>
-		This user has no logs yet!
+		<i><%= view_user.name || view_user.email %></i> heeft op dit moment nog niks in zijn logboek staan!
 	</p>
 <% end %>

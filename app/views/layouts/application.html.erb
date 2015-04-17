@@ -19,13 +19,13 @@
 	<% end %>
 
 	<% if user_signed_in? %>
-	  <%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'btn link'  %>
+	  <%= link_to 'Uitloggen', destroy_user_session_path, method: :delete, :class => 'btn link'  %>
 	<% else %>
 		<% if devise_mapping.registerable? && controller_name != 'registrations' %>
-	  	<%= link_to 'Sign up', new_user_registration_path, :class => 'btn link'  %>
+	  	<%= link_to 'Registreren', new_user_registration_path, :class => 'btn link'  %>
 	  <% end %>
 		<% if controller_name != 'sessions' %> 
-	  	<%= link_to 'Login', new_user_session_path, :class => 'btn link'  %>
+	  	<%= link_to 'Inloggen', new_user_session_path, :class => 'btn link'  %>
 	  <% end %>
 	<% end %>
 
@@ -35,8 +35,8 @@
 
 <% if user_signed_in? %>
 		<div class='top-nav'>
-				<%= link_to 'Profile', root_path, class: ('active' if controller.controller_name == 'users') %>
-					<%= link_to 'Logbook', logs_path, class: ('active' if controller.controller_name == 'logs') %>
+				<%= link_to 'Profiel', root_path, class: ('active' if controller.controller_name == 'users') %>
+					<%= link_to 'Logboek', logs_path, class: ('active' if controller.controller_name == 'logs') %>
 				<%= link_to 'Competencies', competencies_path, class: ('active' if controller.controller_name == 'competencies')  %>
 		</div>
 <% end %>

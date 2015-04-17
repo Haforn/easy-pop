@@ -1,6 +1,6 @@
 <% if object && object.errors.size > 0 %>
 	<div class='form-errors'>
-		<p>There were problems with the following fields:</p>
+		<p>De volgende velden zijn niet juist ingevuld:</p>
 		<ul>
 		<% object.errors.full_messages.each do |msg| %>
 			<li><%= msg %></li>

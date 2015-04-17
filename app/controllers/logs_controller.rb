@@ -10,18 +10,18 @@ class LogsController < ApplicationController
 	def create
 		@log = Log.new(log_params.merge(user_id: current_user.id))
 		if @log.save
-			redirect_to logs_path, notice: "Your log is added"
+			redirect_to logs_path, notice: "Log is toegevoegd!"
 		else
-			redirect_to logs_path, alert: "Oops, something went wrong!"
+			redirect_to logs_path, alert: "Oops, er ging iets mis!"
 		end
 	end
 
 	def destroy
 		@log = Log.find(params[:id])
 		if @log.destroy
-			redirect_to logs_path, notice: "Your log is deleted"
+			redirect_to logs_path, notice: "Log is verwijdert!"
 		else
-			redirect_to logs_path, alert: "Oops, something went wrong!"
+			redirect_to logs_path, alert: "Oops, er ging iets mis!"
 		end
 	end
 

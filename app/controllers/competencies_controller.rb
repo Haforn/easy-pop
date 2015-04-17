@@ -18,9 +18,9 @@ class CompetenciesController < ApplicationController
 	def create
 		@competency = Competency.new(competency_params.merge(user_id: current_user.id))
 		if @competency.save
-			redirect_to @competency, notice: 'Your new competency is added'
+			redirect_to @competency, notice: 'Competencie is toegevoegd!'
 		else
-			render 'new', alert: 'Oops, something went wrong!'
+			render 'new', alert: 'Oops, er ging iets mis!'
 		end
 	end
 
@@ -29,17 +29,17 @@ class CompetenciesController < ApplicationController
 
 	def update
 		if @competency.update_attributes(competency_params)
-			redirect_to @competency, notice: 'Competency is updated'
+			redirect_to @competency, notice: 'Competencie is bewerkt!'
 		else
-			render 'edit', alert: 'Oops, something went wrong!'
+			render 'edit', alert: 'Oops, er ging iets mis!'
 		end
 	end
 
 	def destroy
 		if @competency.destroy
-			redirect_to competencies_path, notice: 'Competency is destroyed'
+			redirect_to competencies_path, notice: 'Competencie is verwijderd!'
 		else
-			render 'edit', alert: 'Oops, something went wrong!'
+			render 'edit', alert: 'Oops, er ging iets mis!'
 		end
 	end
 
@@ -62,9 +62,9 @@ class CompetenciesController < ApplicationController
 			]
 
 			@expertise_list = [
-				'Basic',
-				'Advanced',
-				'Expert'
+				'basis',
+				'gevorderd',
+				'expert'
 			]
 
 			@points_list = [3,6,9,12,15,18,21,24,27,30]

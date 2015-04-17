@@ -1,4 +1,4 @@
-<%= link_to 'Edit Competency', edit_competency_path, class: 'btn edit in-top' %>
+<%= link_to 'Competencie', edit_competency_path, class: 'btn edit in-top' %>
 
 <h2>
 	<%= @competency.title %>
@@ -10,7 +10,7 @@
 
 <% if @competency.learning_goals.any? %>
 	<div class='learning-goals'>
-		<h4>Learning goals</h4>
+		<h4>Leerdoelen</h4>
 		<ul>
 			<% @competency.learning_goals.each do |learning_goal| %>
 				<% if learning_goal.achieved %>
@@ -19,7 +19,7 @@
 					<% achieved = 'not-achieved' %>
 				<% end %>
 				<li class='<%= cycle('odd', 'even') %> <%= achieved %>'>
-					<%= link_to 'Edit', edit_learning_goal_path(learning_goal.id), class: 'btn small edit' %>
+					<%= link_to 'Bewerken', edit_learning_goal_path(learning_goal.id), class: 'btn small edit' %>
 					<p>
 					 	<%= learning_goal.title %>
 					</p>
@@ -29,6 +29,6 @@
 	</div>
 <% end %>
 
-<h4>Add learning goal</h4>
+<h4>Leerdoel toevoegen</h4>
 
 <%= render 'learning_goals/form' %>

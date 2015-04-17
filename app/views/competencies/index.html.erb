@@ -1,4 +1,4 @@
-<%= link_to 'Add a competency', new_competency_path, class: 'btn new in-top' %>
+<%= link_to 'Competencie', new_competency_path, class: 'btn new in-top' %>
 
 <h2>Competencies</h2>
 
@@ -45,10 +45,10 @@
 			
 			<%= render 'proces', competency: competency %>
 			
-			<%= link_to 'Add learn moment', new_learn_moment_path(:competency_id => competency.id), class: 'btn new' %>
+			<%= link_to 'Leermoment', new_learn_moment_path(:competency_id => competency.id), class: 'btn new' %>
 
 			<% if competency.learn_moments.any? %>
-				<a class='btn link left js-show' href=''>Show learn moments</a> 
+				<a class='btn link left js-show' href=''>Bekijk leermomenten</a> 
 			<% end %>
 
 		</li>

@@ -14,9 +14,9 @@ class LearnMomentsController < ApplicationController
 	def create
 		@learn_moment = LearnMoment.new(learn_moment_params)
 		if @learn_moment.save
-			redirect_to competencies_path, notice: "Your learn moment is added"
+			redirect_to competencies_path, notice: 'Leermoment is toegevoegd!'
 		else
-			render 'new', alert: "Oops, something went wrong!"
+			render 'new', alert: 'Oops, er ging iets mis!'
 		end
 	end
 
@@ -25,17 +25,17 @@ class LearnMomentsController < ApplicationController
 
 	def update
 		if @learn_moment.update_attributes(learn_moment_params)
-			redirect_to @learn_moment, notice: "Your learn moment is updated"
+			redirect_to @learn_moment, notice: 'Leermoment is bewerkt!'
 		else 
-			render 'edit', alert: "Oops, something went wrong!"
+			render 'edit', alert: 'Oops, er ging iets mis!'
 		end
 	end
 
 	def destroy
 		if @learn_moment.destroy
-			redirect_to competencies_path, notice: "Your learn moment is deleted"
+			redirect_to competencies_path, notice: 'Leermoment is verwijdert!'
 		else
-			render 'edit', alert: "Oops, something went wrong!"
+			render 'edit', alert: 'Oops, something went wrong!'
 		end
 	end
 
