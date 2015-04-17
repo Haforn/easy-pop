@@ -6,9 +6,9 @@ class User < ActiveRecord::Base
 
   ## Relations ##
   belongs_to :team
-  has_many :competencies
-  has_many :logs
-  has_many :team_requests
+  has_many :competencies, dependent: :destroy
+  has_many :logs, dependent: :destroy
+  has_many :team_requests, dependent: :destroy
 
   ## Image uploader ##
   mount_uploader :avatar, ImageUploader
