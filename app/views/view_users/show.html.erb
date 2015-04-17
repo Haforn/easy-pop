@@ -55,14 +55,14 @@
 	  
 	  <% log.group_by(&:day).sort.each do |day, log| %>
 	    <% cycle('odd') %>
-	    <ul class="competency logbook">
+	    <ul class='competency logbook'>
 	      <li>
 	        <timestamp>Dag <%= day %></timestamp>
-	       	<ul class="learn-moments show">      
+	       	<ul class='learn-moments show'>      
 	         	<% log.each do |log| %>
-	            <li class="<%= cycle('odd', 'even') %>">
+	            <li class='<%= cycle('odd', 'even') %>'>
 	         			<%= log.title %>
-	              <span class="hours">
+	              <span class='hours'>
 	                <%= @hours_list[log.hours] %> hours
 	              </span>
 	              
