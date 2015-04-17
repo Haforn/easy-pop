@@ -1,7 +1,7 @@
 <h2>Add a log</h2>
 <%= render 'form' %>
 
-<div class="clearfix"></div>
+<div class='clearfix'></div>
 
 <h2>Logbook</h2>
 <% @logs.group_by(&:week).sort.each do |week, log| %> 
@@ -9,18 +9,17 @@
   
   <% log.group_by(&:day).sort.each do |day, log| %>
     <% cycle('odd') %>
-    <ul class="competency logbook">
+    <ul class='competency logbook'>
       <li>
         <timestamp>Dag <%= day %></timestamp>
-       	<ul class="learn-moments show">      
+       	<ul class='learn-moments show'>      
          	<% log.each do |log| %>
-            <li class="<%= cycle('odd', 'even') %>">
+            <li class='<%= cycle('odd', 'even') %>'>
          			<%= log.title %>
-              <%= link_to "Delete", log, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'small btn delete'  %>
-              <span class="hours">
+              <%= link_to 'Delete', log, method: :delete, data: { confirm: 'Are you sure?' }, class: 'small btn delete'  %>
+              <span class='hours'>
                 <%= @hours_list[log.hours] %> hours
-              </span>
-              
+              </span> 
          		</li>
          	<% end %>
        	</ul>
