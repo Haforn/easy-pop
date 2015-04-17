@@ -2,25 +2,25 @@
 
 <% if current_user.id == @team.owner_id && @team_requests.any? %>
 	<h3>Join requests</h3>
-	<ul class="learn-moments show competency">
+	<ul class='learn-moments show competency'>
 	<% @team_requests.each do |request| %>
 		<li>
 			<%= request.user.name || request.user.email %>
-			<%= link_to "Add", add_team_member_path(member_id: request.user.id, team_id: @team.id), :class => 'btn new' %>
-			<%= link_to "Remove", remove_request_path(request_id: request.id), :class => "btn delete" %>
+			<%= link_to 'Add', add_team_member_path(member_id: request.user.id, team_id: @team.id), class: 'btn new' %>
+			<%= link_to 'Remove', remove_request_path(request_id: request.id), class: 'btn delete' %>
 		</li>
 	<% end %>
 	</ul>
-
 	<br>
 <% end %>
+
 <h3>Team members</h3>
-<ul class="competency learn-moments show">	
+<ul class='competency learn-moments show'>	
 	<% @team_members.each do |member| %>
 		<li>
-			<%= link_to "View user", view_user_path(id: member.id), :class => 'btn edit' if member.id != current_user.id %>
+			<%= link_to 'View user', view_user_path(id: member.id), class: 'btn edit' if member.id != current_user.id %>
 			<%= member.name || member.email %>
-			<span class="ec">
+			<span class='ec'>
 				<em>
 					<%= 'Team owner' if member.id == @team.owner_id %>&nbsp;&nbsp;
 				</em>
@@ -35,7 +35,10 @@
 
 	<%= render 'form' %>
 
-	<%= link_to "Delete", @team, method: :delete, :class => 'btn delete' %>
+	<%= link_to 'Delete', @team, method: :delete, class: 'btn delete' %>
+
 <% else %>
-	<%= link_to "Leave this team", leave_team_path, :class => "btn delete" %>
+	
+	<%= link_to 'Leave this team', leave_team_path, class: 'btn delete' %>
+
 <% end %>

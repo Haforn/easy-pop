@@ -3,58 +3,58 @@
 <table>	
 	<% if current_user.name? %>
 		<tr>
-			<td class="bold">Name:</td> 
+			<td class='bold'>Name:</td> 
 			<td><%= current_user.name %></td>
 		</tr>
 	<% end %>
 	
 	<tr>
-		<td class="bold">Email:</td> 
+		<td class='bold'>Email:</td> 
 		<td><%= current_user.email %></td>
 	</tr>
 
 	<% if current_user.mobile? %>
 		<tr>
-			<td class="bold">Mobiel nr:</td> 
+			<td class='bold'>Mobiel nr:</td> 
 			<td><%= current_user.mobile %></td>
 		</tr>
 	<% end %>
 
 	<% if current_user.student_number? %>
 		<tr>
-			<td class="bold">Student nr:</td> 
+			<td class='bold'>Student nr:</td> 
 			<td><%= current_user.student_number %></td>
 		</tr>
 	<% end %>
 		<tr>
-			<td class="bold">Updated at:</td> 
-			<td><%= current_user.updated_at.strftime "%d/%m/%Y %H:%M" %></td>
+			<td class='bold'>Updated at:</td> 
+			<td><%= current_user.updated_at.strftime '%d/%m/%Y %H:%M' %></td>
 		</tr>
 </table>
 
 <% if current_user.avatar? %>
-	<div class="profile-picture js-user-image">
+	<div class='profile-picture js-user-image'>
 		<%= image_tag current_user.avatar.url(:thumb) %>
 	</div>
 <% end %>
 
-<br>
+<br><br>
 
-<%= link_to "Edit Profile", edit_user_registration_path, :class => "btn edit left small" %>
+<%= link_to 'Edit Profile', edit_user_registration_path, class: 'btn edit left small' %>
 
 <% if current_user.team_id != nil %>
-	<%= link_to "Your Team", team_path(current_user.team_id), :class => "btn link" %>
+	<%= link_to 'Your Team', team_path(current_user.team_id), class: 'btn link' %>
 	<% if current_user.id == current_user.team.owner_id && @team_requests > 0 %>
-		<span class="message">
+		<span class='message'>
 			<%= @team_requests %>
 		</span>
 	<% end %>
 <% else %>
-	<%= link_to "Join a team", teams_path, :class => "btn new" %>
+	<%= link_to 'Join a team', teams_path, :class => 'btn new' %>
 <% end %>
 
-<div class="clearfix"></div>
+<div class='clearfix'></div>
 <br>
 
-<%= link_to "Generate Pop", generate_pdfs_path(:format => 'pdf'), :class => "btn link", :target => "_blank" %>
+<%= link_to 'Generate Pop', generate_pdfs_path(:format => 'pdf'), class: 'btn link', target: '_blank' %>
 
