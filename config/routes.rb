@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "users/registrations" }
   
   ## Routes ##
-  root 'users#show'
-  
+  devise_scope :user do
+  	root 'users/registrations#edit', as: :authenticated_root
+  end
+
   resources :competencies
 
   resources :learning_goals

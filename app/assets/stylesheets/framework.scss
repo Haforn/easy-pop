@@ -5,7 +5,7 @@ body {
 	font-size: 12px;
 	min-width: 320px;
 	overflow-x: hidden;
-	background: #ECEDED;
+	background: #f7f7f7;
 }
 
 /* little fixes */ 
@@ -19,115 +19,61 @@ body, ul, li {
 
 /* framework */
 
-header {
-	height: 41px;
-	max-width: 1000px;
-	margin: 0 auto;
-	background: #314049;
-	position: relative;
-	.btn {
-		z-index: 1;
-		position: relative;
-		padding: $spacing/2 $spacing;
-	}
-	&.js-width {
-		&:before,
-		&:after {
-			width: 100%;
-			height: 41px;
-			content: '';
-			position: absolute;
-			right: 100%;
-			background: #314049;
-		}
-		&:after {
-			right: -100%;
-		}
-	}
-
-}
-
 .wrapper {
-	padding: 0 $spacing/2 $spacing;
+	padding: $spacing 0 $spacing;
 	position: relative;
 	margin: 0 auto;
-	max-width: 970px;
+	max-width: 1200px;
 }
-
 
 footer {
 	height: $spacing;
 }
 
-.top-nav {
-	height: 40px;
-	margin: 0 auto;
-	max-width: 1000px;
-	background: $green;
-	position: relative;
-	a {
-		display: block;
-		float: left;
-		height: 20px;
-		padding: 11px 0 9px;
-		width: 33.3%;
-		text-align: center;
-		color: #fff;
-		text-decoration: none;
-		position: relative;
-		&.active {
-			background: $dark-green;
-			&:after {
-				content: '';
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				right: 0;
-				margin: 0 auto;
-				width: 0; 
-				height: 0; 
-				border-left: 8px solid transparent;
-				border-right: 8px solid transparent;
-				border-bottom: 8px solid #ECEDED;
-			}
-		}
+.left {
+	width: 40%;
+	float: left;
+	.container {
+		padding-right: $spacing*2;
 	}
-	&.js-width {
-		&:before,
-		&:after {
-			width: 100%;
-			height: 40px;
-			content: '';
-			position: absolute;
-			right: 100%;
-			top: 0;
-			background: $green;
-		}
-		&:after {
-			right: -100%;
-		}
+}
+
+.right {
+	width: 60%;
+	float: left;
+	.container {
+		padding-left: $spacing*2; 
 	}
 }
 
 /* END framework */
 
-h1 {
-	font-size: 16px;
-	font-weight: 300;
-	position: absolute;
-  text-indent: 12px;
-  top: 0px;
-  margin: 0;
-  a {
-  	color: #fff;
-  	text-decoration: none;
-  	display: block;
-  	padding: 9px 0 10px;
-  }
+/* Logo */
+header {
+	h1 {
+		position: absolute;
+	  top: 0;
+	  margin: 0;
+	  a {
+	  	transition: 0.3s;
+	  	color: $basic-color;
+	  	font-family: $special-font;
+	  	text-decoration: none;
+	  	font-size: 22px;
+	  	display: block;
+	  	padding: 16px 0 18px;
+	  	&:hover {
+	  		color: $link-color;
+	  	}
+	  }
+	}
 }
 
+
+/* END Logo */
+
 h2 {
-	font-size: 16px;
+	font-size: 20px;
 	margin: 18px 0;
 	i {
 		padding-left: 6px;

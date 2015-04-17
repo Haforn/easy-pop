@@ -1,0 +1,82 @@
+<header>
+	<% if notice %>
+	  <div class='notice'><%= notice %></div>
+	<% end %>
+	<% if alert %>
+	  <div class='notice fail'><%= alert %></div>
+	<% end %>
+
+	<h1><%= link_to 'Lazy pop', authenticated_root_path %></h1>
+
+	<nav>
+		<ul>
+		<% if user_signed_in? %>
+			<li>
+				<%= link_to 'Logboek', logs_path, class: ('active' if controller.controller_name == 'logs') %>
+			</li>
+			<li>
+				<%= link_to 'Competencies', competencies_path, class: ('active' if controller.controller_name == 'competencies')  %>
+			</li>
+			<li>
+				<%= link_to 'Pdf genereren', generate_pdfs_path(format: 'pdf'), target: '_blank' %>
+			</li>
+			<li class="arrow-down">
+				<ul class="sub-menu">
+					<li>
+						<% if current_user.team_id != nil %>
+							<%= link_to current_user.team.title, team_path(current_user.team_id) %>
+						<% else %>
+							<%= link_to 'Projectgroep', teams_path %>
+						<% end %>
+					</li>
+					<% if current_user.team_id != nil && current_user.id == current_user.team.owner_id && team_requests > 0 %>
+						<span class='message'>
+							<%= team_requests %>
+						</span>
+					<% end %>
+					<li>
+					<%= link_to 'Uitloggen', destroy_user_session_path, method: :delete %>
+					</li>
+				
+				</ul>
+			</li>
+
+			<li class="profile">
+				<% if current_user.name? %>
+					<%= link_to current_user.name, authenticated_root_path, class: ('active' if current_page?('/')) %>
+				<% else %>
+					<%= link_to current_user.email, authenticated_root_path, class: ('active' if current_page?('/')) %>
+				<% end %>
+
+				<a class="avatar <%= 'active' if controller.controller_name == 'users' %>" href="<%= authenticated_root_path %>">
+					<% if current_user.avatar? %>
+						<%= image_tag current_user.avatar.url(:thumb) %>
+					<% elsif current_user.name? %>
+						<span>
+							<%= current_user.name.chars.first %>
+						</span>
+					<% else %>
+						<span>
+							<%= current_user.email.chars.first %>
+						</span>
+					<% end %>
+				</a>
+			</li>
+			
+		<% else %>
+			<% if devise_mapping.registerable? && controller_name != 'registrations' %>
+				<li>
+			  	<%= link_to 'Registreren', new_user_registration_path %>
+			  </li>
+		  <% end %>
+
+			<% if controller_name != 'sessions' %>
+				<li>
+			  	<%= link_to 'Inloggen', new_user_session_path %>
+			  </li>
+		  <% end %>
+		  
+		<% end %>
+		</ul>
+	</nav>
+</header>

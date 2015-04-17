@@ -9,41 +9,17 @@
 </head>
 <body>
 
-<header>
-
-	<% if notice %>
-	  <div class='notice'><%= notice %></div>
-	<% end %>
-	<% if alert %>
-	  <div class='notice fail'><%= alert %></div>
-	<% end %>
+	<%= render 'shared/header' %>
 
 	<% if user_signed_in? %>
-	  <%= link_to 'Uitloggen', destroy_user_session_path, method: :delete, :class => 'btn link'  %>
-	<% else %>
-		<% if devise_mapping.registerable? && controller_name != 'registrations' %>
-	  	<%= link_to 'Registreren', new_user_registration_path, :class => 'btn link'  %>
-	  <% end %>
-		<% if controller_name != 'sessions' %> 
-	  	<%= link_to 'Inloggen', new_user_session_path, :class => 'btn link'  %>
-	  <% end %>
+			<div class='top-nav'>
+				<!-- Here comes the breadcrumps -->
+			</div>
 	<% end %>
 
-	<h1><%= link_to 'Lazy pop', root_path %></h1>
-
-</header>
-
-<% if user_signed_in? %>
-		<div class='top-nav'>
-				<%= link_to 'Profiel', root_path, class: ('active' if controller.controller_name == 'users') %>
-					<%= link_to 'Logboek', logs_path, class: ('active' if controller.controller_name == 'logs') %>
-				<%= link_to 'Competencies', competencies_path, class: ('active' if controller.controller_name == 'competencies')  %>
-		</div>
-<% end %>
-
-<div class='wrapper clearfix'>
-	<%= yield %>
-</div>
+	<div class='wrapper clearfix'>
+		<%= yield %>
+	</div>
 
 </body>
 </html>

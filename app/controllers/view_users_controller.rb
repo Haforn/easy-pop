@@ -3,9 +3,6 @@ class ViewUsersController < ApplicationController
 	before_action :set_view_user, only: [:show]
 	before_action :set_arrays, only: [:show]
 
-	def show
-	end
-
 	private
 
 		def set_view_user

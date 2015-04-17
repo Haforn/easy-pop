@@ -12,10 +12,6 @@ ready = function() {
 	if($('.learnmoment-detail').find('img').length > 0) {
 		setMaxWidthOnImage()
 	}
-	
-	if($('body').find('.js-user-image').length > 0) {
-		//scaleImage();
-	}
 
 	var documentWidth = $(document).width()
 	if(documentWidth > 1000) {
@@ -36,20 +32,6 @@ function setMaxWidthOnImage() {
 		maxHeight: elHeight + 'px'
 	});
 	console.log(elWidth, elHeight);
-}
-
-function scaleImage() {
-	$('.js-user-image').find('img').each(function () {
-		var widthImg = $(this).width();
-		var heightImg = $(this).height();
-		if (widthImg > 100 && heightImg > 100) {
-			if (widthImg < heightImg) {
-				$(this).width('100px');
-	 		} else {
-	 			$(this).height('100px');
-	 		}
-		}
-	}); 
 }
 
 function showOurHideLearnMoments() {

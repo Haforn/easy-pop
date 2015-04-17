@@ -2,6 +2,30 @@
 
 /* Forms input and select
 ------------------------------------------------------*/
+.form {
+	padding: $spacing;
+	background: #fff;
+	ul {
+		width: 70%;
+		margin: 0 auto;
+	}
+	label {
+		color: $link-color;
+		//font-size: 14px;
+	}
+	h4 {
+		font-size: 14px;
+		padding: $spacing 0 0 0;
+		font-weight: 700;
+		font-family: Arial, Helvetica, sans-serif;
+		border-top: 1px solid #ddd;
+		&.border-none {
+			border: none;
+			padding-top: 0;
+		}
+	}
+}
+
 
 form {
 	li {
@@ -127,23 +151,6 @@ input[type="file"] {
 		background: $red;
 		color: #fff;
 	}
-}
-
-.message {
-	width: 19px;
-	height: 17px;
-	padding: 3px 1px 0 0;
-	position: absolute;
-	right: 0;
-	margin-top: -7px;
-	float: right;
-	border: 1px solid #fff;
-	text-align: center;
-	font-weight: 700;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #fff;
-	border-radius: 100%;
-	background: $red;
 }
 
 
