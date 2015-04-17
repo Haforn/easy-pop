@@ -1,20 +1,20 @@
-<h2>Make your team</h2>
+<h2>Maak jouw team</h2>
 
 <%= render 'form' %>
 
 <div class='clearfix'></div>
 
 <% if @teams.any? %>
-	<h2>All teams</h2>
+	<h2>Alle teams</h2>
 
 	<ul class='learn-moments show competency'>
 		<% @teams.each do |team| %>
 			<li>
 				<%= team.title %> <!-- TODO check voor a better way, TEAMREQUEST -->
 				<% if !TeamRequest.where(user_id: current_user.id, team_id: team.id).any? %>
-					<%= link_to 'Join', join_team_path(team_id: team.id), class: 'btn new' %>
+					<%= link_to 'Uitnodiging sturen', join_team_path(team_id: team.id), class: 'btn new' %>
 				<% else %>
-					<%= link_to 'Undo', undo_team_path(team_id: team.id), class: 'btn delete' %>
+					<%= link_to 'Uitnodiging ongedaan maken', undo_team_path(team_id: team.id), class: 'btn delete' %>
 				<% end %>
 			</li>
 		<% end %>

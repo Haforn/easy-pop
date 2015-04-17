@@ -3,21 +3,21 @@
 		<%= error_messages_for @log %>
 		<li>
 			<%= f.label :title, 'Log' %>
-			<%= f.text_field :title, placeholder: 'Log title' %>
+			<%= f.text_field :title, placeholder: 'Log titel' %>
 		</li>
 
 		<li class='form-select'>
-			<%= f.label(:competency) %>
+			<%= f.label :competency, 'Competencie' %>
 			<%= f.select(:competency, @competency_list) %>  
 		</li>
 		
 		<li class='form-select'>
-			<%= f.label :hours, 'Hours spend' %>
+			<%= f.label :hours, 'Uren?' %>
 			<%= f.select(:hours, @hours_list) %>
 		</li>
 
 		<li>
-			<%= f.label :created_at %>
+			<%= f.label :created_at, 'Datum?' %>
 			<%= f.text_field :created_at, id: 'js-log-date', placeholder: Time.now.strftime('%d/%m/%Y') %>
 		</li>
 		

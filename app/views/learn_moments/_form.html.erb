@@ -2,40 +2,39 @@
 		<%= error_messages_for @learn_moment %>
 
 		<li>
-			<%= f.label :title, "Learn moment" %>
-			<%= f.text_field :title, placeholder: 'Learn moment' %>
+			<%= f.label :title, 'Leermoment' %>
+			<%= f.text_field :title, placeholder: 'Leermoment' %>
 		</li>
 
 		<li>
-			<%= f.label :what_was_learned %>
-			<%= f.text_area :what_was_learned, placeholder: 'What did you learned?'  %>
+			<%= f.label :what_was_learned, 'Wat heb je geleerd?' %>
+			<%= f.text_area :what_was_learned, placeholder: 'Wat heb je geleerd?'  %>
 		</li>
 
 		<li>
-			<%= f.label :what_was_done %>
-			<%= f.text_area :what_was_done, placeholder: 'What did you do during this learn moment?' %>
+			<%= f.label :what_was_done, 'Wat heb je gedaan?' %>
+			<%= f.text_area :what_was_done, placeholder: 'Wat heb je gedaan tijdens dit leermoment?' %>
 		</li>
 			
 		<li>
-	    <%= f.label :image %>
 	    <%= f.file_field :image %>
 	  </li>
 
 		<li>
 			<%= f.label :reference %>
-			<%= f.text_field :reference, placeholder: 'Reference back to a document' %>
+			<%= f.text_field :reference, placeholder: 'Bron of referencie vermelding naar een document' %>
 		</li>
 
-		<li class="form-select">
-			<%= f.label :hours, "Hours spend" %>
+		<li class='form-select'>
+			<%= f.label :hours, 'Uren?' %>
 			<%= f.select(:hours, @hour_list) %>
 		</li>
 
 		<% if @competency %>
-			<%= f.hidden_field :competency_id, :value => @competency.id %>
+			<%= f.hidden_field :competency_id, value: @competency.id %>
 		<% end %>
 		<li>
-			<%= f.submit nil, :class => "btn new left bigger" %>
+			<%= f.submit nil, class: 'btn new left bigger' %>
 		</li>
 	<% end %>
 
