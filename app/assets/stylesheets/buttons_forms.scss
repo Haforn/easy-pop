@@ -2,6 +2,15 @@
 
 /* Forms input and select
 ------------------------------------------------------*/
+.left {
+	.form {
+		ul {
+			width: 100%;
+		}
+	}
+}
+
+
 .form {
 	padding: $spacing;
 	background: #fff;
@@ -22,7 +31,12 @@
 		&.border-none {
 			border: none;
 			padding-top: 0;
+			margin-top: 0;
 		}
+	}
+	h3 {
+		margin-top: 0;
+		font-size: 18px;
 	}
 }
 
