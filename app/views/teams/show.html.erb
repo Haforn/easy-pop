@@ -1,44 +1,81 @@
-<h2><%= @team.title %></h2>
+<div class="left">
+	<div class="container ">
+		<div class="view clearfix">
+		<% if current_user.id == @team.owner_id %>
+			
+			<%= render 'form' %>
 
-<% if current_user.id == @team.owner_id && @team_requests.any? %>
-	<h3>Join requests</h3>
-	<ul class='learn-moments show competency'>
-	<% @team_requests.each do |request| %>
-		<li>
-			<%= request.user.name || request.user.email %>
-			<%= link_to 'Add', add_team_member_path(member_id: request.user.id, team_id: @team.id), class: 'btn new' %>
-			<%= link_to 'Remove', remove_request_path(request_id: request.id), class: 'btn delete' %>
-		</li>
-	<% end %>
-	</ul>
-	<br>
-<% end %>
+			<%= link_to 'Verwijderen', @team, method: :delete, data: { confirm: 'Weet je het zeker?' }, class: 'btn delete' %>
 
-<h3>Team members</h3>
-<ul class='competency learn-moments show'>	
-	<% @team_members.each do |member| %>
-		<li>
-			<%= link_to 'Bekijken', view_user_path(id: member.id), class: 'btn edit' if member.id != current_user.id %>
-			<%= member.name || member.email %>
-			<span class='ec'>
-				<em>
-					<%= 'Teamcaptain' if member.id == @team.owner_id %>&nbsp;&nbsp;
-				</em>
-			</span
-		</li>
-	<% end %>
-</ul>
+		<% end %>
+		</div>
+	</div>
+</div>
 
-<br>
+<div class="right">
+	<div class="container">
 
-<% if current_user.id == @team.owner_id %>
+		<h2><%= @team.title %></h2>
+		
+		<div class="view">
+		<% if current_user.id == @team.owner_id && @team_requests.any? %>
+			<h3>Join requests</h3>
+			<ul class='learn-moments show competency'>
+			<% @team_requests.each do |request| %>
+				<li>
+					<%= request.user.name || request.user.email %>
+					<%= link_to 'Add', add_team_member_path(member_id: request.user.id, team_id: @team.id), class: 'btn new' %>
+					<%= link_to 'Remove', remove_request_path(request_id: request.id), class: 'btn delete' %>
+				</li>
+			<% end %>
+			</ul>
+			<br>
+		<% end %>
 
-	<%= render 'form' %>
+		<h3>Team members</h3>
+		<ul class='list'>	
+			<% @team_members.each do |member| %>
+				<li class='<%= cycle('even', 'odd') %>'>
+				<% if member != current_user %>
+					<a class="avatar" href="<%= view_user_path(id: member.id) %>">
+				<% else %>
+					<a class="avatar" href="<%= authenticated_root_path %>">
+				<% end %>
+						<% if member.avatar? %>
+							<%= image_tag member.avatar.url(:thumb) %>
+						<% elsif member.name? %>
+							<span>
+								<%= member.name.chars.first %>
+							</span>
+						<% else %>
+							<span>
+								<%= member.email.chars.first %>
+							</span>
+						<% end %>
+					</a>
+				<% if member != current_user %>				
+					<a href="<%= view_user_path(id: member.id) %>">
+				<% else %>
+					<a href="<%= authenticated_root_path %>">
+				<% end %>
+						<%= member.name || member.email %>
+						<span class='ec'>
+							<em>
+								<%= 'Teamcaptain' if member.id == @team.owner_id %> 
+								&nbsp;
+								&nbsp;
+							</em>
+						</span>
+					</a>
+				</li>
+			<% end %>
+		</ul>
 
-	<%= link_to 'Verwijderen', @team, method: :delete, data: { confirm: 'Weet je het zeker?' }, class: 'btn delete' %>
+		<% if current_user.id != @team.owner_id %>
+			
+			<%= link_to 'Team verlaten', leave_team_path, data: { confirm: 'Weet je het zeker?' }, class: 'btn delete' %>
 
-<% else %>
-	
-	<%= link_to 'Team verlaten', leave_team_path, data: { confirm: 'Weet je het zeker?' }, class: 'btn delete' %>
-
-<% end %>
+		<% end %>
+		</div>
+	</div>
+</div>

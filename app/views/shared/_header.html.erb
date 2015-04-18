@@ -48,7 +48,7 @@
 					<%= link_to current_user.email, authenticated_root_path, class: ('active' if current_page?('/')) %>
 				<% end %>
 
-				<a class="avatar <%= 'active' if controller.controller_name == 'users' %>" href="<%= authenticated_root_path %>">
+				<a class="avatar" href="<%= authenticated_root_path %>">
 					<% if current_user.avatar? %>
 						<%= image_tag current_user.avatar.url(:thumb) %>
 					<% elsif current_user.name? %>
