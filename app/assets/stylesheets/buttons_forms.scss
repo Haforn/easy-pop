@@ -10,6 +10,9 @@
 	}
 }
 
+label {
+	color: $link-color;
+}
 
 .form {
 	padding: $spacing;
@@ -17,10 +20,6 @@
 	ul {
 		width: 70%;
 		margin: 0 auto;
-	}
-	label {
-		color: $link-color;
-		//font-size: 14px;
 	}
 	h4 {
 		font-size: 14px;
