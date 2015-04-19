@@ -1,30 +1,39 @@
-<h2>Log in</h2>
+<%= render 'shared/welkom' %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-<ul>
-  <li>
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </li>
+<div class='right'>
+  <div class='container'>
 
-  <li>
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </li>
+    <div class="view clearfix form">
+      <h4 class="border-none">Inloggen</h4>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <ul>
+        <li>
+          <%= f.label :email, 'Email adres' %><br />
+          <%= f.email_field :email, autofocus: true %>
+        </li>
 
-  <% if devise_mapping.rememberable? -%>
-    <li>
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </li>
-  <% end -%>
+        <li>
+          <%= f.label :password, 'Wachtwoord' %><br />
+          <%= f.password_field :password, autocomplete: "off" %>
+        </li>
 
-  <li>
-  <br>
-    <%= f.submit "Log in", :class => 'btn new bigger left' %>
-  </li>
+        <% if devise_mapping.rememberable? -%>
+          <li>
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me, 'Onthoud mij' %>
+          </li>
+        <% end -%>
 
-</ul>
-<% end %>
+        <li>
+        <br>
+          <%= f.submit "Inloggen", :class => 'btn new bigger left' %>
+        </li>
+
+      </ul>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 <%= render "devise/shared/links" %>
+

@@ -59,13 +59,13 @@
 			
 		<% else %>
 			<% if devise_mapping.registerable? && controller_name != 'registrations' %>
-				<li>
+				<li class='link-right'>
 			  	<%= link_to 'Registreren', new_user_registration_path %>
 			  </li>
 		  <% end %>
 
 			<% if controller_name != 'sessions' %>
-				<li>
+				<li class='link-right'>
 			  	<%= link_to 'Inloggen', new_user_session_path %>
 			  </li>
 		  <% end %>
