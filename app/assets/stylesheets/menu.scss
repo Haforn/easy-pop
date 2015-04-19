@@ -6,6 +6,7 @@ header {
 	margin: 0 auto;
 	background: #fff;
 	position: relative;
+	z-index: 101;
 	&.js-width {
 		&:before,
 		&:after {
@@ -98,6 +99,7 @@ header {
 		&:hover {
 			.sub-menu {
 				height: 88px;
+				overflow: visible;
 			}
 			li {
 				width: 100%;
@@ -192,5 +194,5 @@ nav {
 	font-size: 0;
 	color: #fff;
 	border-radius: 100%;
-	background: $basic-color;
+	background: $red;
 }

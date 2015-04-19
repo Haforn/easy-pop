@@ -14,12 +14,16 @@ ready = function() {
 	}
 
 	var documentWidth = $(document).width()
-	if(documentWidth > 1000) {
-		$('header, .top-nav').addClass('js-width')
+	if(documentWidth < 1000) {
+		$('header, .top-nav').removeClass('js-width')
 	}
 
-	$('.notice, .alert').delay(2000).fadeOut('slow');
+	// Notice, fail
+	$('.notice').delay(4000).fadeOut('slow')
 	
+	$('.notice').addClass('js-move')
+
+
 };
 
 function setMaxWidthOnImage() {

@@ -160,10 +160,14 @@ input[type="file"] {
 	left: 0;
 	right: 0;
 	margin: auto;
+	transition: 0.3s;
 	z-index: 100;
 	&.fail {
 		background: $red;
 		color: #fff;
+	}
+	&.js-move {
+		top: 62px;
 	}
 }
 

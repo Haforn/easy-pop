@@ -9,10 +9,12 @@
 </head>
 <body>
 
+	<%= render 'shared/notice' %>
+
 	<%= render 'shared/header' %>
 
 	<% if user_signed_in? %>
-			<div class='top-nav'>
+			<div class='top-nav js-width'>
 				<!-- Here comes the breadcrumps -->
 			</div>
 	<% end %>
