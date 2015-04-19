@@ -49,9 +49,9 @@ function showOurHideLearnMoments() {
 		$(this).toggleClass('active');
 		
 		if ($(this).hasClass('active')) {
-			$(this).text('Hide learn moments')
+			$(this).text('Verberg leermomenten')
 		} else {
-			$(this).text('Show learn moments')
+			$(this).text('Bekijk leermomenten')
 		}
 	});
 }

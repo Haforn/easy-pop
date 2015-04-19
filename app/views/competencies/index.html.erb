@@ -1,57 +1,73 @@
-<%= link_to 'Competencie', new_competency_path, class: 'btn new in-top' %>
 
-<h2>Competencies</h2>
+<div class='left'>
+	<div class='container'>
+		<div class='view clearfix bg-none'>
+			<%= render 'shared/competency_list' %>
 
-<ul class='competency'>
-	<% @competencies.each do |competency| %>
+			<%= link_to 'Competencie', new_competency_path, class: 'btn new in-top' %>
+		</div>
+	</div>
+</div>
 
-		<% if competency.added %>
-			<% @set_class_added = 'added-to-pop' %>
-		<% else %>
-			<% @set_class_added = 'not-added-to-pop' %>
-		<% end %>
+<div class="right">
+	<div class='container'>
+			<h2>Competencies</h2>
+			<div class='view'>
+			<ul class='competency'>
+				<% @competencies.each do |competency| %>
 
-		<li class='<%= @set_class_added %> clearfix'>
-			<%= link_to competency.title, competency_path(competency), class: 'basic-link left arrow-forward link' %>
-			
-			<i class='ec'>
-				<%= competency.points %> ec 
-				<%= competency.expertise %>
-			</i>
+					<% if competency.added %>
+						<% @set_class_added = 'added-to-pop' %>
+					<% else %>
+						<% @set_class_added = 'not-added-to-pop' %>
+					<% end %>
 
-			<% @total_hours_spend = 0 %>
-			
-			<% if competency.learn_moments.any? %>
-				
-			<ul class='learn-moments'>
-				<% cycle('odd') %>
-				
-				<% competency.learn_moments.each do |learn_moment| %>
-					<li class='<%= cycle('odd', 'even') %>'>
-					
-						<%= link_to learn_moment.title, learn_moment_path(learn_moment), class: 'basic-link' %>	
+					<li class='<%= @set_class_added %> clearfix'>
+						<%= link_to competency.title, competency_path(competency), class: 'basic-link left arrow-forward link' %>
+						
+						<i class='ec'>
+							<%= competency.points %> ec 
+							<%= competency.expertise %>
+						</i>
 
-						<span class='hours'>
-							<%= @hours_list[learn_moment.hours - 1] %> hours
-						</span>
+						<% @total_hours_spend = 0 %>
+						
+						
+							
+						<ul class='learn-moments'>
+							<% if competency.learn_moments.any? %>
+								<% cycle('odd') %>
+								
+								<% competency.learn_moments.each do |learn_moment| %>
+									<li class='<%= cycle('odd', 'even') %>'>
+									
+										<%= link_to learn_moment.title, learn_moment_path(learn_moment), class: 'basic-link' %>	
 
-						<% @total_hours_spend = @total_hours_spend + learn_moment.hours %>
-					
+										<span class='hours'>
+											<%= @hours_list[learn_moment.hours - 1] %> uren
+										</span>
+
+										<% @total_hours_spend = @total_hours_spend + learn_moment.hours %>
+									
+									</li>
+								<% end %>
+							<% end %>
+						</ul>
+						
+							
+						
+						<%= render 'proces', competency: competency %>
+						
+						<%= link_to 'Leermoment', new_learn_moment_path(:competency_id => competency.id), class: 'btn new' %>
+
+						<% if competency.learn_moments.any? %>
+							<a class='btn link left js-show show-btn' href=''>Bekijk leermomenten</a> 
+						<% end %>
+
 					</li>
+
 				<% end %>
 			</ul>
-			
-			<% end %>	
-			
-			<%= render 'proces', competency: competency %>
-			
-			<%= link_to 'Leermoment', new_learn_moment_path(:competency_id => competency.id), class: 'btn new' %>
-
-			<% if competency.learn_moments.any? %>
-				<a class='btn link left js-show' href=''>Bekijk leermomenten</a> 
-			<% end %>
-
-		</li>
-
-	<% end %>
-</ul>
+		</div>
+	</div>
+</div>

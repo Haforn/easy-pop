@@ -36,6 +36,9 @@ footer {
 	.container {
 		padding-right: $spacing*2;
 	}
+	.bg-none{
+		background: none !important;
+	}
 }
 
 .right {
@@ -100,6 +103,11 @@ header {
 
 
 /* END Logo */
+
+h2, h3, h4 {
+	font-family: $basic-font;
+	font-weight: 300;
+}
 
 h2 {
 	font-size: 20px;
