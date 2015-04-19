@@ -19,7 +19,9 @@ ready = function() {
 	}
 
 	// Notice, fail
-	$('.notice').delay(4000).fadeOut('slow')
+	setTimeout(function() {
+		$('.notice').removeClass('js-move')
+	}, 4000); //.fadeOut('slow')
 	
 	$('.notice').addClass('js-move')
 
