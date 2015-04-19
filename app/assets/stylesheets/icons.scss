@@ -1,0 +1,46 @@
+@import 'variables';
+
+.icon {
+	position: relative;
+	> a {
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			margin-top: 2px;
+		}
+	}
+}
+
+.logbook-icon a:before {
+	background: asset_url('logbook.svg');
+	width: 15px;
+	height: 16px;
+}
+
+.files-icon a:before {
+	background: asset_url('files.svg');
+	width: 14px;
+	height: 16px;
+}
+
+.print-icon a:before {
+	background: asset_url('print.svg');
+	width: 18px;
+	margin-top: 3px;
+	height: 14px;
+}
+
+.team-icon a:before {
+	background: asset_url('team.svg');
+	width: 17px;
+	height: 16px;
+	left: 12px;
+}
+
+.logout-icon a:before {
+	background: asset_url('logout.svg');
+	width: 15px;
+	height: 16px;
+	left: 12px;
+}

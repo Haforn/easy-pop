@@ -58,8 +58,8 @@ header {
 	}
 	.sub-menu {
 		top: 62px;
-		width: 140px;
-		left: -78px;
+		width: 160px;
+		left: -98px;
 		height: 0;
 		position: absolute;
 		z-index: 1;
@@ -74,11 +74,11 @@ header {
 			position: relative;
 			overflow: hidden;
 			a {
-				padding: 10px 0 10px 30px;
+			  padding: 14px 0 14px 40px;
+				border-top: solid 1px #f7f7f6;
 				position: relative;
 			}
 		}
-		
 	}
 	.arrow-down {
 		position: relative;
@@ -98,7 +98,7 @@ header {
 		} 
 		&:hover {
 			.sub-menu {
-				height: 88px;
+				height: 94px;
 				overflow: visible;
 			}
 			li {
@@ -121,7 +121,7 @@ nav {
 	margin-left: 150px;
 	height: 62px;
 	li:first-child {
-		width: 128px;
+		width: 162px;
 	}
 }
 
