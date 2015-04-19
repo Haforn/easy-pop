@@ -33,7 +33,7 @@ class TeamsController < ApplicationController
 	def update
 		@team = Team.find(current_user.team_id)
 		if @team.update_attributes(team_params)
-			redirect_to team_path(current_user.team_id), notice: 'Dit is jouw nieuwe team!'
+			redirect_to team_path(current_user.team_id), notice: 'Jouw team is bijgewerkt!'
 		else
 			render 'show', alert: 'Oops, er ging iets mis!'
 		end 

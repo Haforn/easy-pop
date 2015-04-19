@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :authenticate_user!
+  helper_method :team_requests
 
   helper_method :view_user
 
@@ -15,4 +16,9 @@ class ApplicationController < ActionController::Base
 	    end
 	  end
 	  
+	  def team_requests
+	  	if current_user.team.present? && current_user.id == current_user.team.owner_id
+				team_requests = current_user.team.team_requests.count
+			end
+	  end
 end

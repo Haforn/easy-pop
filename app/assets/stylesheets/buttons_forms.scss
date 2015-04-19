@@ -2,6 +2,44 @@
 
 /* Forms input and select
 ------------------------------------------------------*/
+.left {
+	.form {
+		ul {
+			width: 100%;
+		}
+	}
+}
+
+
+.form {
+	padding: $spacing;
+	background: #fff;
+	ul {
+		width: 70%;
+		margin: 0 auto;
+	}
+	label {
+		color: $link-color;
+		//font-size: 14px;
+	}
+	h4 {
+		font-size: 14px;
+		padding: $spacing 0 0 0;
+		font-weight: 700;
+		font-family: Arial, Helvetica, sans-serif;
+		border-top: 1px solid #ddd;
+		&.border-none {
+			border: none;
+			padding-top: 0;
+			margin-top: 0;
+		}
+	}
+	h3 {
+		margin-top: 0;
+		font-size: 18px;
+	}
+}
+
 
 form {
 	li {
@@ -122,28 +160,15 @@ input[type="file"] {
 	left: 0;
 	right: 0;
 	margin: auto;
+	transition: 0.3s;
 	z-index: 100;
 	&.fail {
 		background: $red;
 		color: #fff;
 	}
-}
-
-.message {
-	width: 19px;
-	height: 17px;
-	padding: 3px 1px 0 0;
-	position: absolute;
-	right: 0;
-	margin-top: -7px;
-	float: right;
-	border: 1px solid #fff;
-	text-align: center;
-	font-weight: 700;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #fff;
-	border-radius: 100%;
-	background: $red;
+	&.js-move {
+		top: 62px;
+	}
 }
 
 
@@ -249,6 +274,10 @@ input[type="file"] {
 			right: $spacing/6;		
 		}
 	}
+}
+
+.show-btn {
+	width: auto !important;
 }
 
 /* END button, link, edit, delete, added */

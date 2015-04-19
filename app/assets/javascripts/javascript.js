@@ -12,18 +12,20 @@ ready = function() {
 	if($('.learnmoment-detail').find('img').length > 0) {
 		setMaxWidthOnImage()
 	}
-	
-	if($('body').find('.js-user-image').length > 0) {
-		//scaleImage();
-	}
 
 	var documentWidth = $(document).width()
-	if(documentWidth > 1000) {
-		$('header, .top-nav').addClass('js-width')
+	if(documentWidth < 1000) {
+		$('header, .top-nav').removeClass('js-width')
 	}
 
-	$('.notice, .alert').delay(2000).fadeOut('slow');
+	// Notice, fail
+	setTimeout(function() {
+		$('.notice').removeClass('js-move')
+	}, 4000); //.fadeOut('slow')
 	
+	$('.notice').addClass('js-move')
+
+
 };
 
 function setMaxWidthOnImage() {
@@ -38,20 +40,6 @@ function setMaxWidthOnImage() {
 	console.log(elWidth, elHeight);
 }
 
-function scaleImage() {
-	$('.js-user-image').find('img').each(function () {
-		var widthImg = $(this).width();
-		var heightImg = $(this).height();
-		if (widthImg > 100 && heightImg > 100) {
-			if (widthImg < heightImg) {
-				$(this).width('100px');
-	 		} else {
-	 			$(this).height('100px');
-	 		}
-		}
-	}); 
-}
-
 function showOurHideLearnMoments() {
 	$('.js-show').on('click', function(e) {
 		e.preventDefault();
@@ -61,9 +49,9 @@ function showOurHideLearnMoments() {
 		$(this).toggleClass('active');
 		
 		if ($(this).hasClass('active')) {
-			$(this).text('Hide learn moments')
+			$(this).text('Verberg leermomenten')
 		} else {
-			$(this).text('Show learn moments')
+			$(this).text('Bekijk leermomenten')
 		}
 	});
 }

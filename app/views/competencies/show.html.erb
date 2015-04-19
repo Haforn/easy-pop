@@ -1,34 +1,46 @@
-<%= link_to 'Competencie', edit_competency_path, class: 'btn edit in-top' %>
+<div class='left'>
+	<div class='container'>
+		<div class='view clearfix form bg-none'>
+			<h4 class="border-none">Leerdoel toevoegen</h4>
 
-<h2>
-	<%= @competency.title %>
-	<i class='ec'>
-		<%= @competency.points %> ec 
-		<%= @competency.expertise %>
-	</i>
-</h2>
-
-<% if @competency.learning_goals.any? %>
-	<div class='learning-goals'>
-		<h4>Leerdoelen</h4>
-		<ul>
-			<% @competency.learning_goals.each do |learning_goal| %>
-				<% if learning_goal.achieved %>
-					<% achieved = 'achieved' %>
-				<% else %>
-					<% achieved = 'not-achieved' %>
-				<% end %>
-				<li class='<%= cycle('odd', 'even') %> <%= achieved %>'>
-					<%= link_to 'Bewerken', edit_learning_goal_path(learning_goal.id), class: 'btn small edit' %>
-					<p>
-					 	<%= learning_goal.title %>
-					</p>
-				</li>
-			<% end %>
-		</ul>
+			<%= render 'learning_goals/form' %>
+		</div>
 	</div>
-<% end %>
+</div>
 
-<h4>Leerdoel toevoegen</h4>
-
-<%= render 'learning_goals/form' %>
+<div class='right'>
+	<%= link_to 'Competencie', edit_competency_path, class: 'btn edit in-top' %>
+	<div class="container">
+		<h2>
+			<%= @competency.title %>
+			<i class='ec'>
+				<%= @competency.points %> ec 
+				<%= @competency.expertise %>
+			</i>
+		</h2>
+		<div class='view'>
+			<% if @competency.learning_goals.any? %>
+				<div class='learning-goals'>
+					<h4>Leerdoelen</h4>
+					<ul>
+						<% @competency.learning_goals.each do |learning_goal| %>
+							<% if learning_goal.achieved %>
+								<% achieved = 'achieved' %>
+							<% else %>
+								<% achieved = 'not-achieved' %>
+							<% end %>
+							<li class='<%= cycle('odd', 'even') %> <%= achieved %>'>
+								<%= link_to 'Bewerken', edit_learning_goal_path(learning_goal.id), class: 'btn small edit' %>
+								<p>
+								 	<%= learning_goal.title %>
+								</p>
+							</li>
+						<% end %>
+					</ul>
+				</div>
+			<% else %>
+				<h3>Vergeet niet je leerdoelen toe te voegen!</h3>
+			<% end %>
+		</div>
+	</div>
+</div>

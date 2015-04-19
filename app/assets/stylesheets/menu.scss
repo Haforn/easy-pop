@@ -1,0 +1,203 @@
+@import 'variables';
+
+header {
+	height: 62px;
+	max-width: 1200px;
+	margin: 0 auto;
+	background: #fff;
+	position: relative;
+	z-index: 101;
+	&.js-width {
+		&:before,
+		&:after {
+			width: 100%;
+			height: 62px;
+			content: '';
+			position: absolute;
+			right: 100%;
+			top: 0;
+			background: #fff;
+		}
+		&:after {
+			right: -100%;
+		}
+	}
+	li {
+		display: inline-block;
+		height: 62px;
+		width: 20%;
+		float: left;
+	}
+	a {
+		font-weight: 300;
+		text-decoration: none;
+		color: $link-color;
+		font-size: 14px;
+		display: block;
+		padding: 21px 10px 22px 30px;
+		&:hover {
+			color: $basic-color;
+			text-decoration: none;
+		}
+		&.active {
+			color: $basic-color;
+			
+		}
+	}
+	.profile {
+		float: right;
+		position: relative;
+
+		> a {
+			position: absolute;
+			top: 0;
+		}
+		> a:first-child {
+			padding-left: 50px;
+		}
+	}
+	.sub-menu {
+		top: 62px;
+		width: 140px;
+		left: -78px;
+		height: 0;
+		position: absolute;
+		z-index: 1;
+		background: #fff;
+		transition: 0.3s;
+		overflow: hidden;
+		li {
+			transition: 0.3s;
+			height: 0px;
+			float: none;
+			width: 100%;
+			position: relative;
+			overflow: hidden;
+			a {
+				padding: 10px 0 10px 30px;
+				position: relative;
+			}
+		}
+		
+	}
+	.arrow-down {
+		position: relative;
+		float: right;
+		width: 62px;
+		cursor: pointer;
+		&:before {
+			content: '';
+			position: relative;
+			float: left;
+			background: url('arrow-down.png') no-repeat;
+			width: 20px;
+			height: 20px;
+			transform: scale(0.8);
+			margin-left: 22px;
+			margin-top: 19px;
+		} 
+		&:hover {
+			.sub-menu {
+				height: 88px;
+				overflow: visible;
+			}
+			li {
+				width: 100%;
+				height: 42px;
+			}
+			.message {
+				right: -8px;
+				top: -2px;
+				width: 20px;
+				height: 20px;
+				font-size: 14px;
+				border: 3px solid #fff;
+			}
+		}
+	}
+}
+
+nav {
+	margin-left: 150px;
+	height: 62px;
+	li:first-child {
+		width: 128px;
+	}
+}
+
+
+.top-nav {
+	height: 20px;
+	margin: 0 auto;
+	max-width: 1000px;
+	background: $basic-color;
+	position: relative;
+	a {
+		display: block;
+		float: left;
+		height: 20px;
+		padding: 11px 0 9px;
+		width: 33.3%;
+		text-align: center;
+		color: #fff;
+		text-decoration: none;
+		position: relative;
+		&.active {
+			background: $dark-green;
+			&:after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				width: 0; 
+				height: 0; 
+				border-left: 8px solid transparent;
+				border-right: 8px solid transparent;
+				border-bottom: 8px solid #ECEDED;
+			}
+		}
+	}
+	&.js-width {
+		&:before,
+		&:after {
+			width: 100%;
+			height: 20px;
+			content: '';
+			position: absolute;
+			right: 100%;
+			top: 0;
+			background: $basic-color;
+		}
+		&:after {
+			right: -100%;
+		}
+	}
+}
+
+
+.link-right {
+	float: right;
+}
+
+
+/* Team request message */
+
+.message {
+	transition: 0.3s;
+	overflow: hidden;
+	width: 0px;
+	height: 0px;
+	padding: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	border: 0px solid #fff;
+	text-align: center;
+	font-weight: 700;
+	font-size: 0;
+	color: #fff;
+	border-radius: 100%;
+	background: $red;
+}

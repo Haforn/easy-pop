@@ -1,0 +1,18 @@
+@import 'variables';
+
+.welkom {
+	background: none;
+	h1 {
+		font-family: $special-font;
+		color: $basic-color;
+		font-size: 42px;
+		text-align: center;
+	}
+	h4 {
+		font-size: 22px;
+		font-weight: 300;
+		text-align: center;
+		text-transform: lowercase;
+		font-style: italic;
+	}
+}

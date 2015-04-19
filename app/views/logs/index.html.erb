@@ -1,30 +1,43 @@
-<h2>Log toevoegen</h2>
-<%= render 'form' %>
+<div class="left">
+  <div class="container"> 
+    <div class="form clearfix bg-none">
+      <h4 class='border-none'>Log toevoegen</h4>
+      <%= render 'form' %>
+    </div>
+  </div>
+</div>
 
-<div class='clearfix'></div>
-
-<h2>Logboek</h2>
-<% @logs.group_by(&:week).sort.each do |week, log| %> 
-  <h3>Week <%= week %></h3>
-  
-  <% log.group_by(&:day).sort.each do |day, log| %>
-    <% cycle('odd') %>
-    <ul class='competency logbook'>
-      <li>
-        <timestamp>Dag <%= day %></timestamp>
-       	<ul class='learn-moments show'>      
-         	<% log.each do |log| %>
-            <li class='<%= cycle('odd', 'even') %>'>
-         			<%= log.title %>
-              <%= link_to 'Verwijderen', log, method: :delete, data: { confirm: 'Weet je het zeker?' }, class: 'small btn delete'  %>
-              <span class='hours'>
-                <%= @hours_list[log.hours] %> Uren
-              </span> 
-         		</li>
-         	<% end %>
-       	</ul>
-      </li>
-    </ul>
-  <% end %>
-
-<% end %>
+<div class="right">
+  <div class="container">
+    <h2>Logboek</h2>
+    <div class="sub-container">
+      <% if @logs.any? %>
+        <% @logs.group_by(&:week).sort.each do |week, log| %> 
+          <h4>Week <%= week %></h4>
+          
+          <% log.group_by(&:day).sort.each do |day, log| %>
+            <% cycle('odd') %>
+            <ul class='list logbook'>
+              <li>
+                <timestamp>Dag <%= day %></timestamp>
+               	<ul class='sub-list'>      
+                 	<% log.each do |log| %>
+                    <li class='<%= cycle('even', 'odd') %>'>
+                 			<%= log.title %>
+                      <%= link_to 'Verwijderen', log, method: :delete, data: { confirm: 'Weet je het zeker?' }, class: 'small btn delete'  %>
+                      <span class='hours'>
+                        <%= @hours_list[log.hours] %> Uren
+                      </span> 
+                 		</li>
+                 	<% end %>
+               	</ul>
+              </li>
+            </ul>
+          <% end %>
+        <% end %>
+      <% else %>
+        <h3>Vergeet niet je logboek bij te houden!</h3>
+      <% end %>
+    </div>
+  </div>
+</div>

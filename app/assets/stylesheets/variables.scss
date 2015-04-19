@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,300,400);
+@import url(http://fonts.googleapis.com/css?family=Lobster);
 
 $spacing: 		24px;
 
@@ -17,4 +18,8 @@ $dark-red: #c9302c;
 $dark-blue: #2d6ea3;
 
 /* fonts */
-$basic-font: 'Open Sans', sans-serif;
+$basic-font: 'Open Sans', Arial, Helvetica, sans-serif;
+$special-font: 'Lobster', Arial, Helvetica, sans-serif;
+
+$link-color: #948784;
+$basic-color: #f25433;
