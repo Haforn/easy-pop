@@ -198,6 +198,9 @@ input[type="file"] {
 			background: $basic-color;
 			border-color: $basic-color;
 			color: #fff !important;
+			&:after {
+				background: asset_url('pensil-white.svg') !important;
+			}
 		}
 		&.pensil:after {
 			left: 5px;
@@ -280,7 +283,7 @@ input[type="file"] {
 		&:hover {
 			color: $basic-color;
 			&:after {
-				
+				background: asset_url('pensil-active.svg');
 			}
 		}
 	}
