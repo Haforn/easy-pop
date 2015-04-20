@@ -4,7 +4,6 @@
 ------------------------------------------------------*/
 
 .learning-goals {
-	margin: $spacing 0;
 	li {
 		padding-left: $spacing;
 		overflow: hidden;
@@ -19,10 +18,16 @@
 		}
 	}
 	.odd {
-		background: #F7F7F7;
+		background: #f7f7f7;
+		.list-edit {
+			background: #f7f7f7;
+		}
 	}
 	.even {
-		background: #EDEDED;
+		background: #fff;
+		.list-edit {
+			background: #fff;
+		}
 	}
 }
 
