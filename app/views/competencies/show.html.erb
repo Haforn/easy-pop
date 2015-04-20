@@ -9,8 +9,9 @@
 </div>
 
 <div class='right'>
-	<%= link_to 'Competencie', edit_competency_path, class: 'btn edit in-top' %>
+	
 	<div class="container">
+		<%= link_to 'Competencie', edit_competency_path, class: 'btn edit pensil' %>
 		<h2>
 			<%= @competency.title %>
 			<i class='ec'>
@@ -30,7 +31,7 @@
 								<% achieved = 'not-achieved' %>
 							<% end %>
 							<li class='<%= cycle('odd', 'even') %> <%= achieved %>'>
-								<%= link_to 'Bewerken', edit_learning_goal_path(learning_goal.id), class: 'btn small edit' %>
+								<%= link_to 'Bewerken', edit_learning_goal_path(learning_goal.id), class: 'btn pensil list-edit' %>
 								<p>
 								 	<%= learning_goal.title %>
 								</p>

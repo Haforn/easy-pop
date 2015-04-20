@@ -13,13 +13,7 @@
 
 	<%= render 'shared/header' %>
 
-	
-	<div class='top-nav js-width'>
-		<% if user_signed_in? %>
-			<!-- Here comes the breadcrumps -->
-		<% end %>
-	</div>
-	
+	<%= render 'shared/top_nav' %>
 
 	<div class='wrapper clearfix'>
 		<%= yield %>

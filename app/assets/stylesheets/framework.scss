@@ -29,27 +29,29 @@ body, ul, li {
 footer {
 	height: $spacing;
 }
-
-.left {
-	width: 40%;
-	float: left;
-	.container {
-		padding-right: $spacing*2;
+.wrapper {
+	> .left {
+		width: 40%;
+		float: left;
+		.container {
+			padding-right: $spacing*2;
+		}	
 	}
-	
+	> .right {
+		width: 60%;
+		float: left;
+		.container {
+			padding-left: $spacing*2; 
+		}
+	}
 }
+
 
 .bg-none{
 	background: none !important;
 }
 
-.right {
-	width: 60%;
-	float: left;
-	.container {
-		padding-left: $spacing*2; 
-	}
-}
+
 
 .sub-container {
 	background: #fff;

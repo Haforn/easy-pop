@@ -3,45 +3,78 @@
 .icon {
 	position: relative;
 	> a {
+		transition: 0.3s;
 		&:before {
 			content: '';
 			position: absolute;
 			left: 8px;
 			margin-top: 2px;
+			transition: 0.3s;
 		}
 	}
 }
 
-.logbook-icon a:before {
+.logbook-icon a {
+	&:before {
 	background: asset_url('logbook.svg');
+	margin-top: 3px;
 	width: 15px;
-	height: 16px;
+	height: 14px;
+	}
+	&:hover:before,
+	&.active:before {
+		background: asset_url('logbook-active.svg');
+	}
 }
 
-.files-icon a:before {
+.files-icon a {
+	&:before {
 	background: asset_url('files.svg');
-	width: 14px;
-	height: 16px;
+	width: 13px;
+	height: 15px;
 	left: 10px;
+	}
+	&:hover:before,
+	&.active:before {
+		background: asset_url('files-active.svg');
+	}
 }
 
-.print-icon a:before {
+.print-icon a {
+	&:before {
 	background: asset_url('print.svg');
 	width: 18px;
 	margin-top: 3px;
 	height: 14px;
+	}
+	&:hover:before,
+	&.active:before {
+		background: asset_url('print-active.svg');
+	}
 }
 
-.team-icon a:before {
+.team-icon a{
+	&:before {
 	background: asset_url('team.svg');
 	width: 17px;
 	height: 16px;
 	left: 12px;
+	}
+	&:hover:before,
+	&.active:before {
+		background: asset_url('team-active.svg');
+	}
 }
 
-.logout-icon a:before {
-	background: asset_url('logout.svg');
-	width: 15px;
-	height: 16px;
-	left: 12px;
+.logout-icon a {
+	&:before {
+		background: asset_url('logout.svg');
+		width: 15px;
+		height: 16px;
+		left: 12px;
+	}
+	&:hover:before,
+	&.active:before {
+		background: asset_url('logout-active.svg');
+	}
 }
