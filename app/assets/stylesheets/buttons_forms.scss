@@ -325,7 +325,7 @@ input[type="file"] {
 	text-decoration: none;
 	border: none;
 	background: #f7f7f7;
-	border: 1px solid $link-color;
+	//border: 1px solid $link-color;
 	transistion: 0.3s;
 	&.active,
 	&:hover {
