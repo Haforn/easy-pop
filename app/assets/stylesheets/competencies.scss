@@ -141,7 +141,7 @@
 	border-radius: 50px;
 	height: $spacing/2 - 2;
 	max-width: 100%;
-	background: $basic-color;
+	background: $link-color;
 	z-index: 1 !important;
 	&.red {
 		background: $red;
@@ -158,3 +158,33 @@
 }
 
 /* END time stroke */
+
+
+/* Competencie overview */
+
+.competency-overview {
+	a {
+		padding: $spacing/2 0;
+		display: block;
+		text-decoration: none;
+		border-bottom: 1px dotted $link-color;
+		font-size: 12px;
+		color: #333;
+		transition: 0.3s;
+		&:hover {
+			color: $basic-color;
+		}
+	}
+	h3 {
+		color: $link-color;
+	}
+	li {
+		position: relative;
+	}
+	.ec {
+		position: absolute;
+		right: $spacing/2;
+		top: 14px;
+	}
+}
+

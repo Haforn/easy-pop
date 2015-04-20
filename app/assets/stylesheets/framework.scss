@@ -51,11 +51,10 @@ footer {
 	background: none !important;
 }
 
-
-
 .sub-container {
 	background: #fff;
 	padding: $spacing;
+	margin-bottom: $spacing;
 	li {
 		padding: 15px;
 		a {
@@ -75,11 +74,13 @@ footer {
 		}
 	}
 }
-.sub-container,
+
 .view {
 	padding: $spacing;
 	background: #fff;
-	margin-bottom: $spacing;
+	h3 {
+		margin-top: 0;
+	}
 }
 
 /* END framework */
