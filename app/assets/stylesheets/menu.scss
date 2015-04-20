@@ -47,8 +47,8 @@ header {
 	.profile {
 		float: right;
 		position: relative;
-
-		> a {
+		width: auto;
+		> a:last-child {
 			position: absolute;
 			top: 0;
 		}

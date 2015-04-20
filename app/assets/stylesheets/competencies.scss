@@ -37,7 +37,7 @@
 .learn-moments {
 	font-size: 0px;
 	transition: 0.3s;
-	margin-top: 30px;
+	margin-top: 0px;
 	li {
 		position: relative;
 		transition: 0.3s;
@@ -54,7 +54,7 @@
 
 .show {
 	&.learn-moments {
-		//margin-top: $spacing/2;
+		margin-top: $spacing/2 !important;
 		li {
 			font-size: 12px;
 			padding: $spacing/2;
@@ -97,7 +97,7 @@
 	height: $spacing/2;
 	background: #fff;
 	border: 1px solid #eee;
-	margin: 12px 0 16px;
+	margin: 14px 0 10px;
 	border-radius: 50px;
 	position: relative;
 	> div {
@@ -141,6 +141,7 @@
 	border-radius: 50px;
 	height: $spacing/2 - 2;
 	max-width: 100%;
+	background: $basic-color;
 	z-index: 1 !important;
 	&.red {
 		background: $red;

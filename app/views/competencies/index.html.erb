@@ -29,12 +29,12 @@
 
 						<% @total_hours_spend = 0 %>
 							
-						<ul class='learn-moments'>
+						<ul class='learn-moments clearfix'>
 							<% if competency.learn_moments.any? %>
 								<% cycle('odd') %>
 								
 								<% competency.learn_moments.each do |learn_moment| %>
-									<li class='<%= cycle('odd', 'even') %>'>
+									<li class='clearfix <%= cycle('odd', 'even') %>'>
 									
 										<%= link_to learn_moment.title, learn_moment_path(learn_moment), class: 'basic-link' %>	
 
@@ -49,11 +49,9 @@
 							<% end %>
 						</ul>
 						
-							
-						
 						<%= render 'proces', competency: competency %>
 						
-						<%= link_to 'Leermoment', new_learn_moment_path(:competency_id => competency.id), class: 'btn new' %>
+						<%= link_to 'Leermoment', new_learn_moment_path(:competency_id => competency.id), class: 'btn plus new' %>
 
 						<% if competency.learn_moments.any? %>
 							<a class='btn link left js-show show-btn' href=''>Bekijk leermomenten</a> 
