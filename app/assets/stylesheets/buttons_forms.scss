@@ -185,12 +185,23 @@ input[type="file"] {
 	transition: 0.3s;
 	cursor: pointer;
 	-webkit-appearance: none;
-
+	font-family: $basic-font;
+	font-weight: 300;
+	font-size: 12px;
 	&.edit {
-		background: $blue;
-		border-color: $blue;
+		background: #f7f7f7;
+		border-color: $link-color;
+		color: $link-color;
+		padding-left: $spacing;
+		position: relative;
 		&:hover {
-			background: $dark-blue;
+			background: $basic-color;
+			border-color: $basic-color;
+			color: #fff !important;
+		}
+		&.pensil:after {
+			left: 5px;
+			top: 6px;
 		}
 	}
 	&.delete {
@@ -217,8 +228,75 @@ input[type="file"] {
 	&.small {
 		padding: $spacing/4 $spacing/2;
 	}
-	&.in-top {
-		margin-top: -4px;
+	&.plus {
+		width: auto;
+		padding: $spacing/3+2 $spacing/2 $spacing/3-2 $spacing;
+		position: relative;
+		margin-top: 6px;
+		margin-left: $spacing/2;
+		border: 1px solid #fff;
+		&:before {
+			content: '+';
+			position: absolute;
+			left: 8px;
+			font-size: 20px;
+			top: 5px;
+		}
+		&:hover {
+			background: #fff;
+			color: $basic-color;
+			border: 1px solid #fff;
+		}
+	}
+	&.bread {
+		width: auto;
+		border: none;
+		padding: 16px $spacing/2 14px;
+		background: $basic-color;
+		border-radius: 0px;
+		&:hover {
+			background: rgba(51,51,50,.4);
+		}
+	}
+	&.list-edit {
+		border: none;
+		color: $link-color;
+		position: relative;
+		transition: 0.3s;
+		border-radius: 0;
+		right: -110px;
+		padding: 18px $spacing 17px;
+	}
+	&.pensil {
+		&:after {
+			content: '';
+			background: asset_url('pensil.svg');
+			position: absolute;
+			width: 15px;
+			height: 15px;
+			left: 0px;
+			transition: 0.3s;
+		}
+		&:hover {
+			color: $basic-color;
+			&:after {
+				
+			}
+		}
+	}
+}
+
+.active {
+	 > .bread {
+		background: rgba(51,51,50,1);
+		&:hover {
+			background: rgba(51,51,50,1);
+			cursor: default;
+		}
+	}
+	> .plus {
+		background: #fff;
+		color: $basic-color;
 	}
 }
 

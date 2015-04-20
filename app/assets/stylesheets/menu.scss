@@ -129,7 +129,7 @@ nav {
 .top-nav {
 	height: 20px;
 	margin: 0 auto;
-	max-width: 1000px;
+	max-width: 1200px;
 	background: $basic-color;
 	position: relative;
 	a {
@@ -172,6 +172,15 @@ nav {
 		}
 		&:after {
 			right: -100%;
+		}
+	}
+	&.active {
+		height: 50px;
+		&.js-width {
+			&:before,
+			&:after {
+				height: 50px;
+			}
 		}
 	}
 }

@@ -2,8 +2,6 @@
 	<div class='container'>
 		<div class='view clearfix bg-none'>
 			<%= render 'shared/competency_list' %>
-
-			<%= link_to 'Competencie', new_competency_path, class: 'btn new in-top' %>
 		</div>
 	</div>
 </div>
@@ -30,8 +28,6 @@
 						</i>
 
 						<% @total_hours_spend = 0 %>
-						
-						
 							
 						<ul class='learn-moments'>
 							<% if competency.learn_moments.any? %>

@@ -14,14 +14,15 @@
 
 .logbook-icon a:before {
 	background: asset_url('logbook.svg');
+	margin-top: 3px;
 	width: 15px;
-	height: 16px;
+	height: 14px;
 }
 
 .files-icon a:before {
 	background: asset_url('files.svg');
-	width: 14px;
-	height: 16px;
+	width: 13px;
+	height: 15px;
 	left: 10px;
 }
 
