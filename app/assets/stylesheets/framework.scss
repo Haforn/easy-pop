@@ -42,6 +42,9 @@ footer {
 		float: left;
 		.container {
 			padding-left: $spacing*2; 
+			&.no-left-content {
+				padding-left: 0;
+			}
 		}
 	}
 }
@@ -75,6 +78,7 @@ footer {
 	}
 }
 
+.sub-container,
 .view {
 	padding: $spacing;
 	background: #fff;
