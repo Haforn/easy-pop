@@ -16,17 +16,32 @@
 </div>
 
 <div class="right">
-	<div class="container">
+	<div class="container <%= 'no-left-content' if current_user.id != @team.owner_id %>">
 
 		<h2><%= @team.title %></h2>
 		
 		<% if current_user.id == @team.owner_id && @team_requests.any? %>
-		<div class="sub-container">
+		<div class="view">
 			<h3>Join requests</h3>
 			<ul class='list'>
 			<% @team_requests.each do |request| %>
-				<li class='<%= cycle('even', 'odd') %>'>
-					<%= request.user.name || request.user.email %>
+				<li class='<%= cycle('even', 'odd') %> team-member'>
+						<a class="avatar">
+						<% if request.user.avatar? %>
+							<%= image_tag request.user.avatar.url(:thumb) %>
+						<% elsif request.user.name? %>
+							<span>
+								<%= request.user.name.chars.first %>
+							</span>
+						<% else %>
+							<span>
+								<%= request.user.email.chars.first %>
+							</span>
+						<% end %>
+					</a>
+					<a class="user"> 
+						<%= request.user.name || request.user.email %>
+					</a>
 					<%= link_to 'Add', add_team_member_path(member_id: request.user.id, team_id: @team.id), class: 'btn new' %>
 					<%= link_to 'Remove', remove_request_path(request_id: request.id), class: 'btn delete' %>
 				</li>

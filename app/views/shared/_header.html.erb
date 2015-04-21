@@ -18,9 +18,9 @@
 				<ul class="sub-menu">
 					<li class='team-icon icon'>
 						<% if current_user.team_id != nil %>
-							<%= link_to current_user.team.title, team_path(current_user.team_id) %>
+							<%= link_to current_user.team.title, team_path(current_user.team_id), class: ('active' if controller.controller_name == 'teams') %>
 						<% else %>
-							<%= link_to 'Projectgroep', teams_path %>
+							<%= link_to 'Projectgroep', teams_path, class: ('active' if controller.controller_name == 'teams') %>
 						<% end %>
 					</li>
 					<% if current_user.team_id != nil && current_user.id == current_user.team.owner_id && team_requests > 0 %>
