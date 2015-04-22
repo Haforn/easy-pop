@@ -1,0 +1,9 @@
+$('#feedback-btn, .feedback-container').removeClass('active');
+setTimeout(function() {
+	$('.feedback').remove();
+}, 300);
+
+$('.feedback-notice').addClass('active');
+setTimeout(function() {
+	$('.feedback-notice').removeClass('active')
+}, 4000);

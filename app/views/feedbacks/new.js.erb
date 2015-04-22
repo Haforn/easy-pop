@@ -1,0 +1,9 @@
+if ($('#feedback-btn').hasClass('active')) {
+	$('#feedback-btn, .feedback-container').removeClass('active');
+	setTimeout(function() {
+		$('.feedback').remove();
+	}, 300);
+} else {
+	$('#feedback-btn').after('<%= j render("form") %>');
+	$('.feedback-container, #feedback-btn').addClass('active');
+}

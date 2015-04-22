@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :competencies, dependent: :destroy
   has_many :logs, dependent: :destroy
   has_many :team_requests, dependent: :destroy
+  has_many :feedbacks, dependent: :destroy
 
   ## Image uploader ##
   mount_uploader :avatar, ImageUploader
