@@ -1,0 +1,34 @@
+<div class="container">
+	<%= link_to 'Competencie', edit_competency_path, class: 'btn edit pensil' %>
+	<h2>
+		<%= @competency.title %>
+		<i class='ec'>
+			<%= @competency.points %> ec 
+			<%= @competency.expertise %>
+		</i>
+	</h2>
+	<div class='view'>
+		<% if @competency.learning_goals.any? %>
+			<h4>Leerdoelen</h4>
+			<div class='learning-goals'>
+				<ul>
+					<% @competency.learning_goals.each do |learning_goal| %>
+						<% if learning_goal.achieved %>
+							<% achieved = 'achieved' %>
+						<% else %>
+							<% achieved = 'not-achieved' %>
+						<% end %>
+						<li class='<%= cycle('odd', 'even') %> <%= achieved %>'>
+							<%= link_to 'Bewerken', edit_learning_goal_path(learning_goal.id), class: 'btn pensil list-edit' %>
+							<p>
+							 	<%= learning_goal.title %>
+							</p>
+						</li>
+					<% end %>
+				</ul>
+			</div>
+		<% else %>
+			<h3>Vergeet niet je leerdoelen toe te voegen!</h3>
+		<% end %>
+	</div>
+</div>

@@ -46,6 +46,7 @@ table {
 		margin: auto;
 		text-align: center;
 		margin-top: 20px;
+		text-transform: uppercase;
 	}
 }
 
@@ -67,9 +68,10 @@ table {
 	font-weight: 600;
 	display: inline-block;
 	text-decoration: none;
+	text-transform: uppercase;
 	span {
 		display: block;
-		padding-top: 5px;
+		padding-top: 6px;
 	}
 	img {
 		max-width: 40px;
