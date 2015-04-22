@@ -14,10 +14,20 @@
 	<%= render 'shared/header' %>
 
 	<%= render 'shared/top_nav' %>
-
-	<div class='wrapper clearfix'>
+	
+	<div class='wrapper clearfix'>		
+		
 		<%= yield %>
+
 	</div>
 
+	<div class='feedback-container'>
+		<%= link_to 'Feedback?', new_feedback_path, class: 'feedback-btn', id: 'feedback-btn', remote: true %>
+
+		<span class='feedback-notice'>
+			Bedankt voor je feedback!
+		</span>
+	</div>
+	
 </body>
 </html>

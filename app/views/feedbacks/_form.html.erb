@@ -1,0 +1,22 @@
+<% if user_signed_in? %>
+	
+	<div class='feedback clearfix' id='feedback-form'>
+		<ul>
+			<%= form_for @feedback, remote:true do |f| %>
+				<li>
+					<%= f.label :title, 'Titel' %>
+					<%= f.text_field :title %>
+				</li>
+				<li>
+					<%= f.label :body, 'Beschrijving' %>
+					<%= f.text_area :body %>
+					<br>
+				</li>
+				<li>
+					<%= f.submit 'Versturen', class: 'btn new bigger' %>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+
+<% end %>

@@ -1,0 +1,68 @@
+@import 'variables';
+
+/* Feedback
+------------------------------------------------------*/
+
+.feedback-container {
+	height: 46px;
+	width: 420px;
+	bottom: 0px;
+	position: absolute;
+	left: $spacing;
+	z-index: 1000;
+	transition: 0.3s;
+	overflow: hidden;
+	&.active {
+		bottom: 0;
+		height: 346px;
+	}
+}
+
+.feedback-btn {
+	padding: $spacing/2 $spacing;
+	background: $basic-color;
+	color: #fff;
+	text-transform: uppercase;
+	cursor: pointer;
+	font-weight: 300;
+	border-bottom: 5px solid #c14328;
+	transition: 0.3s;
+	text-decoration: none;
+	border-radius: 4px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  position: absolute;
+  z-index: 10001;
+  top: 3px;
+	&:hover {
+		top: 0px;
+	}
+	&.active {
+		border-bottom: 2px solid #c14328;
+		&:hover {
+			top: 3px;
+		}
+	}
+}
+
+.feedback {
+	background: #fff;
+	padding: $spacing;
+	margin-top: 46px;
+}
+
+.feedback-notice {
+	width: 68%;
+  text-align: right;
+  display: block;
+  margin-top: 13px;
+  opacity: 0;
+  transition: 0.3s;
+  font-weight: 300;
+  color: $link-color;
+  &.active {
+  	opacity: 1;
+  }
+}
+
+/* end feedback */
