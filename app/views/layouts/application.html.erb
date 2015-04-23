@@ -21,15 +21,22 @@
 
 	</div>
 
-	<% if user_signed_in? %>
-		<div class='feedback-container'>
-			<%= link_to 'Feedback?', new_feedback_path, class: 'feedback-btn', id: 'feedback-btn', remote: true %>
+	<footer>
+		<% if user_signed_in? %>
 
+			<%= link_to 'Feedback?', new_feedback_path, class: 'feedback-btn', id: 'feedback-btn', remote: true %>
+			<div class='feedback-container'>
+				
+			</div>
 			<span class='feedback-notice'>
 				Bedankt voor je feedback!
 			</span>
-		</div>
-	<% end %>
+		<% end %>
+
+		
+	</footer>
 	
+	<div class="overlay"></div>
+
 </body>
 </html>

@@ -1,9 +1,20 @@
 if ($('#feedback-btn').hasClass('active')) {
-	$('#feedback-btn, .feedback-container').removeClass('active');
+	$('#feedback-btn, .feedback-container, .overlay').removeClass('active');
 	setTimeout(function() {
 		$('.feedback').remove();
 	}, 300);
 } else {
-	$('#feedback-btn').after('<%= j render("form") %>');
-	$('.feedback-container, #feedback-btn').addClass('active');
+	$('.feedback-container').append('<%= j render("form") %>');
+	$('.feedback-container, #feedback-btn, .overlay').addClass('active');
 }
+
+
+$('.overlay').on('click', function(e) {
+	console.log(e);
+	if ($('#feedback-btn').hasClass('active')) {
+		$('#feedback-btn, .feedback-container, .overlay').removeClass('active');
+		setTimeout(function() {
+			$('.feedback').remove();
+		}, 300);
+	}
+});
