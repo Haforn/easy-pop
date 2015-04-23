@@ -1,0 +1,19 @@
+if ($('.pop-up').hasClass('active')) {
+	removePopUp();
+} else {
+	$('.pop-up > .container').append('<%= j render("new") %>');
+	$('.pop-up, .add-competency, .overlay').addClass('active');
+}
+
+$('.overlay').on('click', function() {
+	removePopUp();
+});
+
+function removePopUp() {
+	if ($('.pop-up').hasClass('active')) {
+		$('.pop-up, .add-competency, .overlay').removeClass('active');
+		setTimeout(function() {
+			$('.pop-up > .container').html('');
+		}, 300);
+	}	
+}

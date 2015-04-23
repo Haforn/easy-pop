@@ -28,10 +28,10 @@ class CompetenciesController < ApplicationController
 	end
 
 	def update
-		if @competency.update_attributes(competency_params)
-			redirect_to @competency, notice: 'Competencie is bewerkt!'
-		else
-			render 'edit', alert: 'Oops, er ging iets mis!'
+		@competency.update_attributes(competency_params)
+		respond_to do |format|
+			format.html { redirect_to @competency }
+			format.js
 		end
 	end
 

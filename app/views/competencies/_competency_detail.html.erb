@@ -1,0 +1,8 @@
+<%= link_to 'Competencie', edit_competency_path(@competency), remote: true, class: 'btn edit pensil' %>
+<h2>
+	<%= @competency.title %>
+	<i class='ec'>
+		<%= @competency.points %> ec 
+		<%= @competency.expertise %>
+	</i>
+</h2>

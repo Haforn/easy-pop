@@ -1,0 +1,12 @@
+$('.competency-detail').html('').append('<%= j render("competency_detail") %>');
+
+removePopUp();
+
+function removePopUp() {
+	if ($('.pop-up').hasClass('active')) {
+		$('.pop-up, .overlay').removeClass('active');
+		setTimeout(function() {
+			$('.pop-up > .container').html('');
+		}, 300);
+	}	
+}

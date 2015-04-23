@@ -6,7 +6,7 @@ header {
 	margin: 0 auto;
 	background: #fff;
 	position: relative;
-	z-index: 101;
+	z-index: 10001;
 	&.js-width {
 		&:before,
 		&:after {
@@ -132,6 +132,7 @@ nav {
 	max-width: 1200px;
 	background: $basic-color;
 	position: relative;
+	z-index: 10001;
 	a {
 		display: block;
 		float: left;
