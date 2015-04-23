@@ -1,5 +1,5 @@
 <ul>
-	<%= form_for @competency do |f| %>
+	<%= form_for @competency, remote: true do |f| %>
 		<li>
 			<%= f.label(:title, 'Competencie') %>
 			<%= f.select(:title, @competency_list)  %>

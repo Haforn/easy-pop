@@ -4,12 +4,12 @@
 		<ul>
 			<% if controller.controller_name == 'competencies' %>
 				
-				<li class='<%= 'active' if action_name == 'index' %>'>
-					<%= link_to 'Competencie overzicht', competencies_path, class: 'btn bread' %>
+				<li class=' <%= 'active' if action_name == 'index' %>'>
+					<%= link_to 'Competencie overzicht', competencies_path, class: 'btn bread ' %>
 				</li>
 
-				<li class='<%= 'active' if action_name == 'new' %>'>
-					<%= link_to 'Competencie', new_competency_path, class: 'btn plus' %>
+				<li class='add-competency <%= 'active' if action_name == 'new' %>'>
+					<%= link_to 'Competencie', new_competency_path, remote: true, class: 'btn plus' %>
 				</li>
 			<% end %>
 		</ul>
