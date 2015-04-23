@@ -28,6 +28,8 @@ body, ul, li {
 
 footer {
 	height: $spacing;
+	z-index: 100000;
+	position: relative;
 }
 .wrapper {
 	> .left {
@@ -148,6 +150,16 @@ p {
 	line-height: 24px;
 }
 
+/* Footer
+------------------------------------------------------*/
+
+footer {
+	position: fixed;
+	right: 0;
+	bottom: $spacing;
+}
+
+/* end footer */
 
 /* Clear Floated Elements 
 ------------------------------------------------------*/
