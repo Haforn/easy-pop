@@ -1,0 +1,25 @@
+var el = 0;
+
+// Getting back the right element
+$('.learning-goals').find('li').each(function() {
+	if ($(this).attr('data-id') == <%= @learning_goal.id %>) {
+		el = $(this);
+	}
+});
+
+el.removeClass('active');
+el.find('a').removeClass('active');
+
+$('.edit-form').remove();
+$('.left .container .view').append('<%# j render("new") %>');
+el.find('p').text('<%= @learning_goal.title %>')
+
+if (<%= @learning_goal.achieved %>) {
+	if (el.hasClass('not-achieved')) {
+		el.removeClass('not-achieved').addClass('achieved');
+	}
+} else {
+	if (el.hasClass('achieved')) {
+		el.removeClass('achieved').addClass('not-achieved');
+	}
+}
