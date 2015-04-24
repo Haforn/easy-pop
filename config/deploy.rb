@@ -1,6 +1,6 @@
 lock '3.2.1'
 
-set :application, 'easy_pop'
+set :application, 'Lazy Pop'
 set :repo_url, 'git@github.com:Haforn/easy-pop.git'
 set :deploy_to, '/u/apps/easy_pop_production'
 set :ssh_options, {
@@ -8,6 +8,7 @@ set :ssh_options, {
 }
 set :pty, true
 set :linked_files, %w{config/database.yml .rbenv-vars .ruby-version}
+
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 set :default_env, { path: "/opt/rbenv/shims:$PATH" }
 set :keep_releases, 5
@@ -20,4 +21,3 @@ namespace :deploy do
   end
   after :publishing, :restart
 end
-
