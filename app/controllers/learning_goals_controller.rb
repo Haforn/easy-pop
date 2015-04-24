@@ -2,13 +2,22 @@ class LearningGoalsController < ApplicationController
 
 	before_action :set_learning_goal, except: [:create]
 
+	def new
+		@learning_goal = LearningGoal.new
+	end
+
 	def create
-		@learning_goal = LearningGoal.new(learning_goal_params)
-		if @learning_goal.save
-			redirect_to @learning_goal.competency, notice: 'Leerdoel is toegevoegd!'
-		else
-			redirect_to :back, alert: 'Oops, er ging iets mis!'
+		@learning_goal = LearningGoal.create!(learning_goal_params)
+		respond_to do |format|
+			format.html { redirect_to @learning_goal.competency }
+			format.js
 		end
+
+		#if @learning_goal.save
+		#	redirect_to @learning_goal.competency, notice: 'Leerdoel is toegevoegd!'
+		#else
+		#	redirect_to :back, alert: 'Oops, er ging iets mis!'
+		#end
 	end
 
 	def edit

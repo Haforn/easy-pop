@@ -1,0 +1,11 @@
+<% if learning_goal.achieved %>
+	<% achieved = 'achieved' %>
+<% else %>
+	<% achieved = 'not-achieved' %>
+<% end %>
+<li class='<%= cycle('odd', 'even') %> <%= achieved %>'>
+	<%= link_to 'Bewerken', edit_learning_goal_path(learning_goal.id), class: 'btn pensil list-edit' %>
+	<p>
+	 	<%= learning_goal.title %>
+	</p>
+</li>

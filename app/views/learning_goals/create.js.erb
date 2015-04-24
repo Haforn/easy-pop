@@ -1,0 +1,15 @@
+var parent = $('.js-learning-goals');
+
+if (parent.find('.note').length > 0) {
+	parent.find('.note').remove();
+	parent.append('<h4>Leerdoelen</h4><div class="learning-goals"><ul><%= j render @learning_goal %></ul></div>')
+} else {
+	parent.find('ul').append('<%= j render @learning_goal %>');
+	var el = parent.find('ul li:last-child')
+	if (el.prev().hasClass('even')) {
+		el.addClass('odd').removeClass('even');
+	}
+}
+
+$('.new_learning_goal').find('textarea').val(null)
+

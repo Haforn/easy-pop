@@ -1,0 +1,9 @@
+<div class='view js-learning-goals'>
+	<% if @competency.learning_goals.any? %>
+		
+		<%= render 'learning_goals/learning_goals_list' %>
+
+	<% else %>
+		<h3 class='note'>Vergeet niet je leerdoelen toe te voegen!</h3>
+	<% end %>
+</div>

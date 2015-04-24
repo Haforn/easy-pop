@@ -1,4 +1,4 @@
-<%= form_for @learning_goal do |f| %>
+<%= form_for @learning_goal, remote: true do |f| %>
 	<ul><%= error_messages_for(@learning_goal) %>
 		<li>
 			<%= f.label :title, 'Leerdoel' %>
