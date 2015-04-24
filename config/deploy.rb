@@ -1,6 +1,6 @@
 lock '3.2.1'
 
-set :application, 'Lazy Pop'
+set :application, 'easy_pop'
 set :repo_url, 'git@github.com:Haforn/easy-pop.git'
 set :deploy_to, '/u/apps/easy_pop_production'
 set :ssh_options, {
