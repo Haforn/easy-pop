@@ -48,7 +48,7 @@
 						
 						<%= render 'proces', competency: competency %>
 						
-						<%= link_to 'Leermoment', new_learn_moment_path(:competency_id => competency.id), class: 'btn plus new' %>
+						<%= link_to 'Leermoment', new_learn_moment_path(competency_id: competency.id), class: 'btn plus new' %>
 
 						<% if competency.learn_moments.any? %>
 							<a class='btn link left js-show show-btn' href=''>Bekijk leermomenten</a> 

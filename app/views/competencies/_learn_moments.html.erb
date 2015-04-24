@@ -2,7 +2,7 @@
 	<div class='view clearfix'>
 	<% if @competency.learn_moments.any? %>
 		<h4>Leermomenten</h4>
-		<div class='learning-goals'>
+		<div class='learn-moment'>
 			<ul>
 				<% @competency.learn_moments.each do |learn_moment| %>
 					<li class='<%= cycle('odd', 'even') %>'>
@@ -15,7 +15,7 @@
 		</div>
 	<% else %>
 		<h3 class='block'>Voeg je eerste leermoment toe!</h3>
-		<%= link_to 'Leermoment', new_learn_moment_path, class: 'btn new plus margin-fix' %>
+		<%= link_to 'Leermoment', new_learn_moment_path(competency_id: @competency.id), class: 'btn new plus margin-fix' %>
 	<% end %>
 	</div>
 </div>

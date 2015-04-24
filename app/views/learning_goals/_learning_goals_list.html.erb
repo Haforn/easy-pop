@@ -1,0 +1,11 @@
+<h4>Leerdoelen</h4>
+<div class='learning-goals'>
+	
+	<ul>
+		<% @competency.learning_goals.each do |learning_goal| %>
+
+			<%= render 'learning_goals/learning_goal', learning_goal: learning_goal %>
+
+		<% end %>
+	</ul>
+</div>

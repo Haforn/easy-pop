@@ -2,11 +2,12 @@
 
 /* Learning goals
 ------------------------------------------------------*/
-
+.learn-moment,
 .learning-goals {
 	li {
 		padding-left: $spacing;
 		overflow: hidden;
+		&.active,
 		&:hover {
 			.list-edit {
 				right: 0;
@@ -56,4 +57,14 @@
 	&:before {
 		background: asset_url('cross.svg');
 	}
+}
+
+.edit-form {
+	position: absolute;
+  top: 0;
+  background: #f7f7f7;
+  width: 100%;
+  > div {
+  	padding: $spacing $spacing*2 $spacing*2 0;
+  }
 }
