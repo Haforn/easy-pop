@@ -19,18 +19,21 @@ class LearningGoalsController < ApplicationController
 
 	def update
 		@learning_goal.update_attributes(learning_goal_params);
-		respond_to do |format|
-			format.html { redirect_to @learning_goal.competency }
-			format.js
-		end
+		#respond_to do |format|
+		#	format.html { redirect_to @learning_goal.competency }
+		#	format.js
+		#end
 	end
 
 	def destroy
-		if @learning_goal.destroy
-			redirect_to @learning_goal.competency, notice: 'Leerdoel is verwijderd!'
-		else
-			render @learning_goal, alert: 'Oops, er ging iets mis!'
-		end
+		@learning_goal.destroy
+
+
+		#if @learning_goal.destroy
+		#	redirect_to @learning_goal.competency, notice: 'Leerdoel is verwijderd!'
+		#else
+		#	render @learning_goal, alert: 'Oops, er ging iets mis!'
+		#end
 	end
 
 	private
