@@ -2,4 +2,4 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Verwijderen', @learning_goal, method: :delete, data: { confirm: 'Weet je het zeker?' }, class: 'btn delete' %>
+<%= link_to 'Verwijderen',  @learning_goal, remote: true, method: :delete, data: { confirm: 'Weet je het zeker?' }, class: 'btn delete' %>
