@@ -15,7 +15,7 @@
 				<%= link_to 'Pdf genereren', generate_pdfs_path(format: 'pdf'), target: '_blank' %>
 			</li>
 			<li class="arrow-down">
-				<ul class="sub-menu">
+				<ul class="sub-menu <%= 'admin' if current_user.admin %>">
 					<li class='team-icon icon'>
 						<% if current_user.team_id != nil %>
 							<%= link_to current_user.team.title, team_path(current_user.team_id), class: ('active' if controller.controller_name == 'teams') %>
@@ -28,8 +28,13 @@
 							<%= team_requests %>
 						</span>
 					<% end %>
+					<% if current_user.admin %>
+						<li>
+							<%= link_to 'Alle feedback', feedbacks_path %>
+						</li>
+					<% end %>
 					<li class='logout-icon icon'>
-					<%= link_to 'Uitloggen', destroy_user_session_path, method: :delete %>
+						<%= link_to 'Uitloggen', destroy_user_session_path, method: :delete %>
 					</li>
 				
 				</ul>

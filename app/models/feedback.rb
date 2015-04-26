@@ -4,6 +4,6 @@ class Feedback < ActiveRecord::Base
 	belongs_to :user
 
 	## Validations ##
-	validates :title, presence: true
+	validates :body, presence: true
 
 end

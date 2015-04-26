@@ -1,19 +1,14 @@
 <% if user_signed_in? %>
 	
 	<div class='feedback clearfix' id='feedback-form'>
+		<h4 class='border-none'>Stuur ons een bericht</h4>
 		<ul>
 			<%= form_for @feedback, remote:true do |f| %>
 				<li>
-					<%= f.label :title, 'Titel' %>
-					<%= f.text_field :title %>
+					<%= f.text_area :body, placeholder: 'Stuur ons feedback of vraag om hulp' %>
 				</li>
 				<li>
-					<%= f.label :body, 'Beschrijving' %>
-					<%= f.text_area :body %>
-					<br>
-				</li>
-				<li>
-					<%= f.submit 'Versturen', class: 'btn new bigger' %>
+					<%= f.submit 'Versturen', class: 'btn new' %>
 				</li>
 			<% end %>
 		</ul>
