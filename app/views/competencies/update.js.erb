@@ -1,4 +1,5 @@
 $('.competency-detail').html('').append('<%= j render("competency_detail") %>');
+$('.js-competency').find('a').text('<%= @competency.title %>')
 
 removePopUp();
 
