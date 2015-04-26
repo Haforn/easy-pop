@@ -10,7 +10,6 @@ if ($('#feedback-btn').hasClass('active')) {
 
 
 $('.overlay').on('click', function(e) {
-	console.log(e);
 	if ($('#feedback-btn').hasClass('active')) {
 		$('#feedback-btn, .feedback-container, .overlay').removeClass('active');
 		setTimeout(function() {
