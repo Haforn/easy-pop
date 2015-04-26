@@ -1,0 +1,25 @@
+<div class='left'>
+	<div class='container'>
+		<%= render 'shared/profile' %>
+	</div>
+</div>
+
+<div class='right'>
+	<div class='container'>
+		<div class='view'>
+			<% if @feedbacks.any? %>
+			<ul>
+				<% @feedbacks.each do |feedback| %>
+				<li>	
+					<h4 class='name'><%= feedback.user.name %></h4>
+					<span class='email'>Email: <%= feedback.user.email %></span>
+					<p><%= feedback.body %></p>
+				</li>
+				<% end %>
+			</ul>
+			<% else %>
+				<p>Er is nog geen feedback ontvangen de gebruikers</p>
+			<% end %>
+		</div>
+	</div>
+</div>

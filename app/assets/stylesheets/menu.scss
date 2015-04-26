@@ -100,6 +100,9 @@ header {
 			.sub-menu {
 				height: 94px;
 				overflow: visible;
+				&.admin {
+					height: 137px;
+				}
 			}
 			li {
 				width: 100%;
