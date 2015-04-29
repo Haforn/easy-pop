@@ -1,3 +1,4 @@
+
 var el = 0;
 
 $('.learning-goals').find('li').each(function() {
@@ -16,3 +17,7 @@ $('.learning-goals').find('li').each(function(i) {
 		$(this).removeClass('odd').removeClass('even').addClass('even')
   }	
 });
+
+if ($('.js-learning-goals').find('li').length < 1) {
+	$('.js-learning-goals').html('<h3 class="note">Vergeet niet je leerdoelen toe te voegen!</h3>')
+}
