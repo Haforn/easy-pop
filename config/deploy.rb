@@ -13,6 +13,9 @@ set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/sys
 set :default_env, { path: "/opt/rbenv/shims:$PATH" }
 set :keep_releases, 5
 namespace :deploy do
+	task :symlink_uploads do
+    run "ln -nfs #{shared_path}/uploads  #{release_path}/public/uploads"
+  end
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
@@ -21,3 +24,4 @@ namespace :deploy do
   end
   after :publishing, :restart
 end
+
