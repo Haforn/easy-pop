@@ -6,13 +6,11 @@ $('.learning-goals').find('li').each(function() {
 	}
 });
 
+if ($('.left').find('.edit-form').length > 0) {
+	$('.edit-form').remove();
+}
 $('.left .container .view').append('<div class="edit-form clearfix"><div><%= j render "edit" %></div></div>')
 
-if ($('body').find('.new_learning_goal').length > 0) {
-	el.addClass('active');
-	el.find('a').addClass('active');
-} else {
-	el.addClass('active').siblings().removeClass('active');
-	el.parent().find('a').removeClass('active');
-	el.find('a').addClass('active');
-}
+el.addClass('active').siblings().removeClass('active');
+el.parent().find('a').removeClass('active');
+el.find('a').addClass('active');
