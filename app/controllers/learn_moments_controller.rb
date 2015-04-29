@@ -1,7 +1,7 @@
 class LearnMomentsController < ApplicationController
-
-	before_action :set_competency, except: [:show, :edit, :update, :destroy]
+	
 	before_action :set_learn_moment, except: [:new, :create]
+	before_action :set_competency
 	before_action :set_arrays
 
 	def show
@@ -50,8 +50,10 @@ class LearnMomentsController < ApplicationController
 		def set_competency
 			if params[:competency_id]
 				@competency = Competency.find(params[:competency_id])
-			else 
+			elsif params[:learn_moment]
 				@competency = Competency.find(params[:learn_moment][:competency_id])
+			else
+				@competency = @learn_moment.competency
 			end
 		end
 

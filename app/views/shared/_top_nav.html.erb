@@ -1,14 +1,22 @@
-<div class='top-nav js-width <%= 'active' if controller.controller_name == 'competencies' %>'>
+<div class='top-nav js-width <%= 'active' if controller_name == 'competencies' || controller_name == 'learn_moments' %>'>
 	<% if user_signed_in? %>
 		<!-- Here comes the breadcrumps -->
 		<ul>
-			<% if controller.controller_name == 'competencies' %>
+			<% if controller_name == 'competencies' || controller_name == 'learn_moments' %>
 				
-				<li class=' <%= 'active' if action_name == 'index' %>'>
-					<%= link_to 'Competencie overzicht', competencies_path, class: 'btn bread ' %>
+				<li class='<%= 'active' if action_name == 'index' %>'>
+					<%= link_to 'Competencie overzicht', competencies_path, class: 'btn bread' %>
 				</li>
 
-				<li class='add-competency <%= 'active' if action_name == 'new' %>'>
+				<% if @competency %>
+					<li class='js-competency <%= 'active' if controller_name == 'competencies' && action_name == 'show' %>'>
+						<%= link_to @competency.title, @competency, class: 'btn bread' %>
+					</li>
+				<% end %>
+				<li>
+				
+				</li>
+				<li class='add-competency <%= 'active' if action_name == 'new' && controller_name == 'competencies' %>'>
 					<%= link_to 'Competencie', new_competency_path, remote: true, class: 'btn plus' %>
 				</li>
 			<% end %>
