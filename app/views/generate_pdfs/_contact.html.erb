@@ -1,0 +1,27 @@
+<h3>Contact</h3>
+
+<%= wicked_pdf_image_tag(current_user.avatar, :class => 'profile-picture') if current_user.avatar.present? %>
+
+<table class="contact-list"> 
+	<tr>
+		<td>Naam:</td> 
+		<td><%= current_user.name %></td>
+	</tr>
+	<tr>
+		<td>Email:</td> 
+		<td><%= current_user.email %></td>
+	</tr>
+	<% if current_user.mobile? %>
+		<tr>
+			<td>Mobiel nr:</td> 
+			<td><%= current_user.mobile %><td>
+		</tr>
+	<% end %>
+
+	<% if current_user. student_number? %> 
+		<tr>
+			<td>Student nr:</td> 
+			<td><%= current_user.student_number %></td>
+		</tr>
+	<% end %>
+</table>

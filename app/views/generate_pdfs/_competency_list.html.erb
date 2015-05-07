@@ -1,0 +1,23 @@
+<h3 class="clear-float">Competencie lijst</h3>
+
+<% total_points = 0 %>
+
+<table class="competency-list">
+	<% current_user.competencies.each do |competency| %>
+		<tr>
+			<td><%= competency.title %></td>
+			<td class="ec">
+				<%= competency.points %> ec 
+			</td>
+		</tr>
+			
+			<% total_points = total_points + competency.points %>
+	<% end %>
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td>Totaal:</td> 
+		<td class="ec"><%= total_points %> ec</td>
+	</tr> 
+</table>

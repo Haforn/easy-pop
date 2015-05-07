@@ -1,0 +1,39 @@
+<% if competency.learn_moments.any? %>
+	<h3>Leermomenten</h3>
+<% end %>
+
+<% @total_hours = 0 %>
+
+<% competency.learn_moments.each do |learn_moment| %>
+	
+	<h4>
+		<%= learn_moment.title %> 
+		<% if learn_moment.hours != nil %>
+			<span class="hours">
+			<%= @hours_list[learn_moment.hours - 1] %> uren
+			</span>
+
+			<% @total_hours = @total_hours + learn_moment.hours %> 
+
+		<% end %>
+	</h4>
+	<% if learn_moment.what_was_learned.length > 0 %>
+	  <strong>Wat is er geleerd?</strong>
+	  <p><%= learn_moment.what_was_learned %></p>
+	<% end %>
+
+	<% if learn_moment.what_was_done.length > 0 %>
+		<strong>Wat is er gedaan?</strong>
+		<p><%= learn_moment.what_was_done %></p>
+	<% end %>
+
+	<% if learn_moment.image.length > 0 %>
+		<%= wicked_pdf_image_tag learn_moment.image %>
+	<% end %>
+
+	<% if learn_moment.reference.present? %>
+		<p>
+			<b>Referencie:</b> <%= learn_moment.reference %>
+		</p>
+	<% end %>
+<% end %>
