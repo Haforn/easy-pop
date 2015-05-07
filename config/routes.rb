@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'errors/not_found'
+
+  get 'errors/internal_server_error'
+
   devise_for :users, controllers: { registrations: "users/registrations" }
   
   ## Routes ##
@@ -29,5 +33,8 @@ Rails.application.routes.draw do
  	get 'view_user/:id', to: 'view_users#show', as: 'view_user' 
 
  	resources :feedbacks
+
+  get "/404" => "errors#not_found"
+  get "/500" => "errors#internal_server_error"
 
 end
