@@ -1,0 +1,16 @@
+<% if competency.learning_goals.any? %>
+	<h3>Leerdoelen</h3>
+	
+	<ul class="learn-goal">
+		<% competency.learning_goals.each do |learning_goal| %>
+			<li>
+				<% if learning_goal.achieved %>
+					<%= wicked_pdf_image_tag "check.svg" %>
+				<% else %>
+					<%= wicked_pdf_image_tag "cross.svg" %>
+				<% end %>
+				<%= learning_goal.title %>
+			</li>
+		<% end %>
+	</ul>
+<% end %>
