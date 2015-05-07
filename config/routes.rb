@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :competencies
 
   resources :learning_goals
+  get 'learning_goals/:id/delete', to: 'learning_goals#delete', as: 'delete_learning_goal' 
 
  	resources :learn_moments
 

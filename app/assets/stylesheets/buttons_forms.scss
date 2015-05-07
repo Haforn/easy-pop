@@ -164,7 +164,7 @@ input[type="file"] {
 	right: 0;
 	margin: auto;
 	transition: 0.3s;
-	z-index: 100;
+	z-index: 10002;
 	&.fail {
 		background: $red;
 		color: #fff;
@@ -303,6 +303,32 @@ input[type="file"] {
 			&:after {
 				background: asset_url('pensil-active.svg');
 			}
+		}
+	}
+	&.log-trash {
+		color: $link-color;
+		padding: 15px;
+		margin-top: -15px;
+		padding-left: 30px;
+		position: absolute;
+		right: -125px;
+		transition: 0.3s;
+		&:hover {
+			color: $basic-color;
+			&:after {
+				background: asset_url('trash-active.svg');
+			}
+		}
+	}
+	&.trash {
+		&:after {
+			content: '';
+			background: asset_url('trash.svg');
+			position: absolute;
+			width: 15px;
+			height: 15px;
+			left: 8px;
+			transition: 0.3s;
 		}
 	}
 }

@@ -25,6 +25,10 @@ class LearningGoalsController < ApplicationController
 		#end
 	end
 
+	def delete
+
+	end
+
 	def destroy
 		@learning_goal.destroy
 

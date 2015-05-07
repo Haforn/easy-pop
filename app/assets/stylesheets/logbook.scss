@@ -1,5 +1,22 @@
+@import 'variables';
+
 .logbook {
 	.hours {
 		margin-right: 15px;
+		transition: 0.3s;
+	}
+	.sub-list {
+		li {
+			overflow: hidden;
+			position: relative;
+			&:hover {
+				.log-trash {
+					right: 0px;
+				}
+				.hours {
+					margin-right: 110px;
+				}
+			}
+		}
 	}
 }

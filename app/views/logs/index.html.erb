@@ -24,7 +24,7 @@
                  	<% log.each do |log| %>
                     <li class='<%= cycle('even', 'odd') %>'>
                  			<%= log.title %>
-                      <%= link_to 'Verwijderen', log, method: :delete, data: { confirm: 'Weet je het zeker?' }, class: 'small btn delete'  %>
+                      <%= link_to 'Verwijderen', log, method: :delete, data: { confirm: 'Weet je het zeker?' }, class: 'btn trash log-trash'  %>
                       <span class='hours'>
                         <%= @hours_list[log.hours] %> Uren
                       </span> 
