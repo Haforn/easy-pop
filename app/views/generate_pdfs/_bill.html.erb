@@ -13,11 +13,13 @@
 			</li>
 		<% end %>
 
+		<%= render 'log_moments', competency: competency %>
+
 			<li>
 				<strong>
 					Totaal: 
 					<span class="hours">
-						<%= @total_hours / 2 %> uren
+						<%= @total_hours %> uren
 					</span>
 				</strong>
 			</li>

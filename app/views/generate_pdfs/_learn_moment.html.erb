@@ -13,7 +13,7 @@
 			<%= @hours_list[learn_moment.hours - 1] %> uren
 			</span>
 
-			<% @total_hours = @total_hours + learn_moment.hours %> 
+			<% @total_hours = @total_hours + @hours_list[learn_moment.hours - 1] %> 
 
 		<% end %>
 	</h4>

@@ -16,7 +16,6 @@
  	page-break-after: always;
  	page-break-inside: avoid;
  	padding-top: $spacing;
- 	font-family: BasicFont;
  	margin-bottom: $spacing*2;
 }
 
@@ -152,7 +151,7 @@
 			img {
 				position: absolute;
 				left: -20px;
-				top: 5px;
+				top: 3px;
 			}
 		}
 	}
