@@ -1,0 +1,27 @@
+<% if @remaining_logs.any? %>
+<div class='page'>
+	<% total_hours = 0 %>
+	<h2>Overige werkzaamheden</h2>
+	<ul class="hour-list">
+	<% @remaining_logs.each do |remaining_log| %>
+		<li>
+			<%= remaining_log.title %>
+			<% if remaining_log.hours != nil %>		
+				<span class="hours">
+					<%= @hours_list[remaining_log.hours - 1] %> uren
+					<% total_hours = total_hours + @hours_list[remaining_log.hours - 1] %>
+				</span>
+			<% end %>
+		</li>
+	<% end %>
+		<li>
+			<strong>
+				Totaal: 
+				<span class="hours">
+					<%= total_hours %> uren
+				</span>
+			</strong>
+		</li>
+	</ul>
+</div>
+<% end %>

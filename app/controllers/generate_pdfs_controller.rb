@@ -3,6 +3,8 @@ class GeneratePdfsController < ApplicationController
 	before_action :set_arrays
 
 	def index
+		@remaining_logs = current_user.logs.where(competency: 'Overig..')
+
 		respond_to do |format|
       format.html
       format.pdf do
