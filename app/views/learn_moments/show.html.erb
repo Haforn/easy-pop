@@ -18,7 +18,7 @@
 			<p class='title'>
 				<strong><%= @learn_moment.title %></strong>
 					<span class='hours'>
-						<%= @hour_list_show[@learn_moment.hours - 1] %> uren
+						<%= @learn_moment.hours %> uren
 					</span>
 			</p>
 			<% if !@learn_moment.what_was_learned.blank? %> 

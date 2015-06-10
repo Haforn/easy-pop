@@ -70,8 +70,7 @@ class CompetenciesController < ApplicationController
 			@points_list = [3,6,9,12,15,18,21,24,27,30]
 
 			@hours_list = [
-				0.5,1,1.5,2,2.5,3,3.5,4,
-				4.5,5,5.5,6,6.5,7,7.5,8
+				0,1,2,3,4,5,6,7,8
 			]
 		end
 

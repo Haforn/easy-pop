@@ -26,7 +26,7 @@
                  			<%= log.title %>
                       <%= link_to 'Verwijderen', log, method: :delete, data: { confirm: 'Weet je het zeker?' }, class: 'btn trash log-trash'  %>
                       <span class='hours'>
-                        <%= @hours_list[log.hours] %> Uren
+                        <%= log.hours %> Uren
                       </span> 
                  		</li>
                  	<% end %>
