@@ -7,7 +7,6 @@ ready = function() {
 	
 	$('#js-log-date').datepicker({
 		dateFormat: 'dd/mm/yy',
-		changeMonth: true,
 		showWeek: true,
 		numberOfMonths: 3
 	});
