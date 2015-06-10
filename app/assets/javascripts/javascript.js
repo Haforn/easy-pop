@@ -6,7 +6,10 @@ ready = function() {
 	showOurHideLearnMoments()
 	
 	$('#js-log-date').datepicker({
-		dateFormat: 'dd/mm/yy'
+		dateFormat: 'dd/mm/yy',
+		changeMonth: true,
+		showWeek: true,
+		numberOfMonths: 3
 	});
 	
 	if($('.learnmoment-detail').find('img').length > 0) {
