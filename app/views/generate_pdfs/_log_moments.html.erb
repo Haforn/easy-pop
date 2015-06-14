@@ -4,8 +4,8 @@
 			<%= log.title %>
 			<% if log.hours != nil %>		
 				<span class="hours">
-					<%= @hours_list[log.hours - 1] %> uren
-					<% @total_hours = @total_hours + @hours_list[log.hours - 1] %>
+					<%= log.hours %> uren
+					<% @total_hours = @total_hours + log.hours %>
 				</span>
 			<% end %>
 		</li>

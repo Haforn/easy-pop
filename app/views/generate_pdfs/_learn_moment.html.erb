@@ -10,10 +10,10 @@
 		<%= learn_moment.title %> 
 		<% if learn_moment.hours != nil %>
 			<span class="hours">
-			<%= @hours_list[learn_moment.hours - 1] %> uren
+			<%= learn_moment.hours %> uren
 			</span>
 
-			<% @total_hours = @total_hours + @hours_list[learn_moment.hours - 1] %> 
+			<% @total_hours = @total_hours + learn_moment.hours %> 
 
 		<% end %>
 	</h4>

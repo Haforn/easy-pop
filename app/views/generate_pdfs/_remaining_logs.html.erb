@@ -8,8 +8,8 @@
 			<%= remaining_log.title %>
 			<% if remaining_log.hours != nil %>		
 				<span class="hours">
-					<%= @hours_list[remaining_log.hours - 1] %> uren
-					<% total_hours = total_hours + @hours_list[remaining_log.hours - 1] %>
+					<%= remaining_log.hours %> uren
+					<% total_hours = total_hours + remaining_log.hours %>
 				</span>
 			<% end %>
 		</li>
