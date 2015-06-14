@@ -1,23 +1,10 @@
 <div class='time-stroke'>
-	<div class='hours-spend'>
-		<% if @total_hours_spend > 0 %>
-			<!-- total hours spend, in decimals -->
-			<% total_hours_spend_decimal = @total_hours_spend.round(2) /2 %>
-		<% else %>
-			<% total_hours_spend_decimal = 0 %>
-		<% end %>
-	</div>
-
-	<div class='hours-to-compleet'>
-		<!-- total hours to compleet -->
-		<% total_hours_to_compleet = competency.points * 10 %> 
-	</div>
 
 	<!-- getting back the procentage -->
-	<% procentage = total_hours_spend_decimal / total_hours_to_compleet * 100 %>
+	<% procentage = (@total_hours_spend / (competency.points.to_f / 3 * 28) * 100).round() %>
 	
-	<div class='procentage' style='left: <%= procentage.round(2) if procentage < 100 %>%;'>
-			<%= procentage.round() %>%
+	<div class='procentage' style='left: <%= procentage if procentage < 100 %>%;'>
+			<%= procentage %>%
 	</div>
 
 	<!-- gives back the proces line --> 
