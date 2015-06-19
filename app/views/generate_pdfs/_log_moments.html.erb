@@ -1,12 +1,18 @@
-<% current_user.logs.each do |log| %>
+<% current_user.logs.order(:created_at).each do |log| %>
 	<% if competency.title == log.competency %>
 		<li>
 			<%= log.title %>
 			<% if log.hours != nil %>		
-				<span class="hours">
+				
+				<span class='time'>
+					<%= log.created_at.strftime('%d/%m/%Y') %>
+				</span>
+
+				<span class="hours">					
 					<%= log.hours %> uren
 					<% @total_hours = @total_hours + log.hours %>
 				</span>
+
 			<% end %>
 		</li>
 	<% end %>

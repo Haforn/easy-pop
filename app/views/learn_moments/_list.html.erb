@@ -21,6 +21,7 @@
 			</ul>
 		</div>
 	<% else %>
+		<%= link_to 'Leermoment', new_learn_moment_path(competency_id: @competency.id), class: 'btn new plus margin-fix' %>
 		<h3 class='block'>Voeg je eerste leermoment toe!</h3>
 	<% end %>
 		

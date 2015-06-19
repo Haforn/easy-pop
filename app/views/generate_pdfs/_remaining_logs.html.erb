@@ -6,11 +6,17 @@
 	<% @remaining_logs.each do |remaining_log| %>
 		<li>
 			<%= remaining_log.title %>
-			<% if remaining_log.hours != nil %>		
+			<% if remaining_log.hours != nil %>	
+
 				<span class="hours">
 					<%= remaining_log.hours %> uren
 					<% total_hours = total_hours + remaining_log.hours %>
 				</span>
+			
+				<span class='time'>
+					<%= remaining_log.created_at.strftime('%d/%m/%Y') %>
+				</span>
+
 			<% end %>
 		</li>
 	<% end %>
