@@ -19,12 +19,12 @@
 	</h4>
 	<% if learn_moment.what_was_learned.length > 0 %>
 	  <strong>Wat is er geleerd?</strong>
-	  <p><%= simple_format(learn_moment.what_was_learned) %></p>
+	  <%= simple_format(learn_moment.what_was_learned) %>
 	<% end %>
 
 	<% if learn_moment.what_was_done.length > 0 %>
 		<strong>Wat is er gedaan?</strong>
-		<p><%= simple_format(learn_moment.what_was_done) %></p>
+		<%= simple_format(learn_moment.what_was_done) %>
 	<% end %>
 
 	<% if learn_moment.image.length > 0 %>

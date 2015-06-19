@@ -1,6 +1,6 @@
 <% if @total_hours > 0 %>
 	<div class="page">	
-		<h3>De Rekening</h3>
+		<h3>De rekening leermomenten</h3>
 		<ul class="hour-list">
 		<% competency.learn_moments.each do |learn_moment| %>
 			<li>	
@@ -12,9 +12,23 @@
 				<% end %>
 			</li>
 		<% end %>
+			<li>
+				<strong>
+					Totaal: 
+					<span class="hours">
+						<%= @total_hours %> uren
+					</span>
+				</strong>
+			</li>
+		
+		</ul>
+
+		<% @total_hours = 0 %>
+		<h3>De rekening logboek</h3>
+		<ul class="hour-list">
 
 		<%= render 'log_moments', competency: competency %>
-
+		
 			<li>
 				<strong>
 					Totaal: 
@@ -26,3 +40,5 @@
 		</ul>
 	</div>
 <% end %>
+
+
